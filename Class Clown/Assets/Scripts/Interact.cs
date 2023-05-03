@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpAndThrow : MonoBehaviour
+public class Interact : MonoBehaviour
 {
     [SerializeField] private Transform playerCam;
     [SerializeField] private LayerMask pickupable;
