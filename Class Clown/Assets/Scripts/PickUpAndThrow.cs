@@ -29,5 +29,15 @@ public class PickUpAndThrow : MonoBehaviour
                 held.GetComponent<PickUP>().Drop();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(holding && held != null)
+            {
+                Debug.Log("Throw");
+                holding = false;
+                held.GetComponent<PickUP>().Throw(gameObject.transform);
+            }
+        }
     }
 }

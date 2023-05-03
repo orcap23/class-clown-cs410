@@ -24,6 +24,13 @@ public class PickUP : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
     }
+    public void Throw(Transform Player)
+    {
+        grabpoint = null;
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        rb.AddForce(Player.forward * 10, ForceMode.Impulse);
+    }
     private void FixedUpdate()
     {
         if(grabpoint != null)
