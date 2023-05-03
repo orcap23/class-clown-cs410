@@ -1,5 +1,6 @@
 # class-clown-cs410
 UO CS 410 Game Programming - Class Clown
+
 Class Clown is about escaping school. You're a kid who will do anything necessary to get out of class.
 
 The Team
