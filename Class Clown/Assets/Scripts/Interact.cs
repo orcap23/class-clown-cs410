@@ -22,6 +22,8 @@ public class Interact : MonoBehaviour
                     held = PickUP.gameObject;
                     holding = true;
                     Debug.Log("Grabbable");
+                }else if(hit.transform.TryGetComponent(out Openable openable)){
+                    openable.open();
                 }
             }
             else if(holding && held != null){
