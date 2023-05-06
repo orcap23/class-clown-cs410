@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpAndThrow : MonoBehaviour
+public class Interact : MonoBehaviour
 {
     [SerializeField] private Transform playerCam;
     [SerializeField] private LayerMask pickupable;
@@ -22,6 +22,8 @@ public class PickUpAndThrow : MonoBehaviour
                     held = PickUP.gameObject;
                     holding = true;
                     Debug.Log("Grabbable");
+                }else if(hit.transform.TryGetComponent(out Openable openable)){
+                    openable.open();
                 }
             }
             else if(holding && held != null){
