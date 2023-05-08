@@ -14,3 +14,13 @@ Assets: Elias Charles
 Sound: Patrick Rodriguez
 
 Class Clown is about escaping school. You're a kid who will do anything necessary to get out of class.
+
+Sound Attribution:
+
+Sneaky Adventure by Kevin MacLeod | https://incompetech.com/
+
+Music promoted by https://www.chosic.com/free-music/all/
+
+Creative Commons CC BY 3.0
+
+https://creativecommons.org/licenses/by/3.0/
