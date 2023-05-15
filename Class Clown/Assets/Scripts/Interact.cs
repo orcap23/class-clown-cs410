@@ -29,6 +29,7 @@ public class Interact : MonoBehaviour
             else if(holding && held != null){
                 holding = false;
                 held.GetComponent<PickUP>().Drop();
+                held = null;
             }
         }
 
@@ -39,7 +40,12 @@ public class Interact : MonoBehaviour
                 Debug.Log("Throw");
                 holding = false;
                 held.GetComponent<PickUP>().Throw(gameObject.transform);
+                held = null;
             }
+        }
+        if (held != null)
+        {
+            held.transform.rotation = Quaternion.Lerp(held.transform.rotation,playerCam.rotation, 12*Time.deltaTime);
         }
     }
 }
