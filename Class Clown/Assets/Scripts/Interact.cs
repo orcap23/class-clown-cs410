@@ -8,6 +8,9 @@ public class Interact : MonoBehaviour
     [SerializeField] private LayerMask pickupable;
     [SerializeField] private float pickupdist = 2f;
     [SerializeField] private Transform grabpoint;
+    [SerializeField] private AudioSource pickupSound;
+    [SerializeField] private AudioSource throwSound;
+
     private Transform highlight;
     private bool holding = false;
     GameObject held;
@@ -44,6 +47,7 @@ public class Interact : MonoBehaviour
                         PickUP.Grab(grabpoint, gameObject);
                         held = PickUP.gameObject;
                         holding = true;
+                        pickupSound.Play();
                         Debug.Log("Grabbable");
                     }
                     else if (highlight.TryGetComponent(out Openable openable))
@@ -65,6 +69,7 @@ public class Interact : MonoBehaviour
             {
                 Debug.Log("Throw");
                 holding = false;
+                throwSound.Play();
                 held.GetComponent<PickUP>().Throw(gameObject.transform);
                 held = null;
             }
