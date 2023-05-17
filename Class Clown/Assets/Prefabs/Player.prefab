@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 14448280297871908}
   - component: {fileID: 14448280297871907}
   - component: {fileID: 14448280297871913}
+  - component: {fileID: 1166994624297507350}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -391,8 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
-  jump: 0
   sprint: 0
+  aim: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -512,3 +513,16 @@ MonoBehaviour:
     m_Bits: 55
   pickupdist: 10
   grabpoint: {fileID: 14448279732634663}
+--- !u!114 &1166994624297507350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14448280297871906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56fe620eb4c14646b1d28fd250e43ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimCam: {fileID: 0}
