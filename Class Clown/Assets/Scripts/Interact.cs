@@ -13,7 +13,11 @@ public class Interact : MonoBehaviour
 
     private Transform highlight;
     private bool holding = false;
-    GameObject held;
+    private GameObject held;
+    public GameObject getHeld
+    {
+        get { return held;}
+    }
     private void Update()
     {
         // raycast from player every frame its only one though so should be computationally trivial
@@ -46,6 +50,7 @@ public class Interact : MonoBehaviour
                     {
                         PickUP.Grab(grabpoint, gameObject);
                         held = PickUP.gameObject;
+                        Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), held.GetComponent<Collider>());
                         holding = true;
                         pickupSound.Play();
                         Debug.Log("Grabbable");
