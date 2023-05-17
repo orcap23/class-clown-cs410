@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Interact : MonoBehaviour
 {
@@ -8,9 +9,13 @@ public class Interact : MonoBehaviour
     [SerializeField] private LayerMask pickupable;
     [SerializeField] private float pickupdist = 2f;
     [SerializeField] private Transform grabpoint;
+    [SerializeField] private AudioSource pickupSound;
+    [SerializeField] private AudioSource throwSound;
 
     private bool holding = false;
     GameObject held;
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -18,6 +23,7 @@ public class Interact : MonoBehaviour
             if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit hit, pickupdist, pickupable) && !holding){
                 Debug.Log(hit.transform.name);
                 if (hit.transform.TryGetComponent(out PickUP PickUP)) {
+                    pickupSound.Play();
                     PickUP.Grab(grabpoint,gameObject);
                     held = PickUP.gameObject;
                     holding = true;
@@ -38,6 +44,7 @@ public class Interact : MonoBehaviour
             if(holding && held != null)
             {
                 Debug.Log("Throw");
+                throwSound.Play();
                 holding = false;
                 held.GetComponent<PickUP>().Throw(gameObject.transform);
                 held = null;
