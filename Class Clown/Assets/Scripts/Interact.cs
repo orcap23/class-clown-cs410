@@ -10,6 +10,15 @@ public class Interact : MonoBehaviour
     [SerializeField] private Transform grabpoint;
     [SerializeField] private AudioSource pickupSound;
     [SerializeField] private AudioSource throwSound;
+    private float noMovementThreshhold = 0.0001f;
+    private const int nomoveframe = 5;
+    private bool isMoving;
+
+    Vector3[] prev = new Vector3[nomoveframe];
+    public bool IsMoving
+    {
+        get { return isMoving; }
+    }
 
     private Transform highlight;
     private bool holding = false;
@@ -17,6 +26,14 @@ public class Interact : MonoBehaviour
     public GameObject getHeld
     {
         get { return held;}
+    }
+    void Awake()
+    {
+        //For good measure, set the previous locations
+        for (int i = 0; i < prev.Length; i++)
+        {
+            prev[i] = Vector3.zero;
+        }
     }
     private void Update()
     {
@@ -27,10 +44,32 @@ public class Interact : MonoBehaviour
             highlight.gameObject.GetComponent<Outline>().enabled = false;
             highlight = null;
         }
+        //Store the newest vector at the end of the list of vectors
+        for (int i = 0; i < prev.Length - 1; i++)
+        {
+            prev[i] = prev[i + 1];
+        }
+        prev[prev.Length - 1] = transform.position;
+
+        //Check the distances between the points in your previous locations
+        //If for the past several updates, there are no movements smaller than the threshold,
+        //you can most likely assume that the object is not moving
+        for (int i = 0; i < prev.Length - 1; i++)
+        {
+            if (Vector3.Distance(prev[i], prev[i + 1]) >= noMovementThreshhold)
+            {
+                //The minimum movement has been detected between frames
+                isMoving = true;
+                break;
+            }
+            else
+            {
+                isMoving = false;
+            }
+        }
         if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit selectable, pickupdist, pickupable))
         {
             highlight = selectable.transform;
-            Debug.Log(highlight.name);
             if (selectable.transform.CompareTag("Selectable"))
             {
                 if (highlight.gameObject.GetComponent<Outline>() != null)
@@ -53,7 +92,6 @@ public class Interact : MonoBehaviour
                         Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), held.GetComponent<Collider>());
                         holding = true;
                         pickupSound.Play();
-                        Debug.Log("Grabbable");
                     }
                     else if (highlight.TryGetComponent(out Openable openable))
                     {
@@ -67,7 +105,6 @@ public class Interact : MonoBehaviour
                 highlight = null;
             }
         }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if(holding && held != null)
