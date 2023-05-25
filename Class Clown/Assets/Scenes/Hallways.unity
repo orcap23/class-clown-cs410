@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 10, y: 10}
-  Hallway: {fileID: 6701082189602273230, guid: 9741418c0e177984ca68116f400a7253, type: 3}
+  Hallway: {fileID: 3382337195589988136, guid: c36f59ce8e49097428356b1131bb0aea, type: 3}
   offset: {x: 10, y: 10}
 --- !u!4 &102757782
 Transform:

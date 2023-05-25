@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GenerateMaze();
-    }
-
-
     public class Cell
     {
         public bool[] walls = new bool[4];
@@ -23,6 +15,10 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Hallway;
     public Vector2Int offset;
 
+    void Start()
+    {
+        GenerateMaze();
+    }
     void GenerateHallways()
     {
         for (int i = 0; i < size.x; i++)
@@ -30,7 +26,7 @@ public class MazeGenerator : MonoBehaviour
             for (int j = 0; j < size.y; j++)
             {
                 //Debug.Log(board[i,j].visited);
-                var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+                RoomBehavior newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
                 newHallway.UpdateRoom(board[i,j].walls);
             }
         }
