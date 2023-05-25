@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using StarterAssets;
+using Player;
 public class ThirdPersonAim : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimCam;
-    private StarterAssetsInputs starterAssetsInputs;
+    private PlayerInputs PlayerInput;
     private void Awake()
     {
-        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        PlayerInput = GetComponent<PlayerInputs>();
 
     }
     private void Update()
     {
-        if (starterAssetsInputs.aim)
+        if (PlayerInput.aim)
         {
             aimCam.gameObject.SetActive(true);
         }
