@@ -24,15 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Sprint",
-                    "type": "PassThrough",
-                    "id": "980e881e-182c-404c-8cbf-3d09fdb48fef",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Aim",
                     "type": "PassThrough",
                     "id": "81289832-25e3-4ed8-8afb-f2c65094c69c",
@@ -181,28 +172,6 @@
                     "processors": "InvertVector2(invertX=false),StickDeadzone,ScaleVector2(x=300,y=300)",
                     "groups": "Gamepad",
                     "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c8fcd86e-dcfd-4f88-8e93-b638cdbf3320",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5d66b032-84cb-4f4c-bbde-f7f29b678203",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

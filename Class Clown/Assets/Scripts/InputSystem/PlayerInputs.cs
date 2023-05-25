@@ -10,7 +10,6 @@ namespace Player
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
-		public bool sprint;
 		public bool aim;
 		public bool crouch;
 
@@ -39,11 +38,6 @@ namespace Player
 			AimInput(value.isPressed);
 		}
 
-		public void OnSprint(InputValue value)
-		{
-			SprintInput(value.isPressed);
-		}
-
 		public void OnCrouch(InputValue value)
 		{
 			CrouchInput(value.isPressed);
@@ -54,15 +48,9 @@ namespace Player
 		{
 			move = newMoveDirection;
 		} 
-
 		public void LookInput(Vector2 newLookDirection)
 		{
 			look = newLookDirection;
-		}
-
-		public void SprintInput(bool newSprintState)
-		{
-			sprint = newSprintState;
 		}
 		public void AimInput(bool newAimState)
 		{

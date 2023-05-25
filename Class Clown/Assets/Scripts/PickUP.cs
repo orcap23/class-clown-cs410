@@ -20,6 +20,7 @@ public class PickUP : MonoBehaviour
             gameObject.AddComponent<Rigidbody>();
         }
         rb = gameObject.GetComponent<Rigidbody>();
+        Physics.IgnoreCollision(Player.GetComponent<Collider>(), GetComponent<Collider>(), true);
         rb.isKinematic = true;
         rb.useGravity = false;
     }

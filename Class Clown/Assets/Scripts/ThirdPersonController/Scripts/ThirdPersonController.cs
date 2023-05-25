@@ -18,9 +18,6 @@ namespace Player
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
-        [Tooltip("Sprint speed of the character in m/s")]
-        public float SprintSpeed = 5.335f;
-
         [Tooltip("Crouch speed of the character in m/s")]
         public float CrouchMoveSpeed = 1.5f;
 
@@ -240,8 +237,7 @@ namespace Player
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
-            targetSpeed = _input.crouch ? CrouchMoveSpeed : targetSpeed;
+            float targetSpeed = _input.crouch ? CrouchMoveSpeed : MoveSpeed;
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
