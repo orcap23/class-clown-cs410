@@ -33,14 +33,14 @@ public class MazeGenerator : MonoBehaviour
     void GenerateSchool()
     {
         List<Cell> visited = new List<Cell>();
-        
+
 
         // Generate rooms using maze data structure
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
             {
-                Cell current = board[i,j];
+                Cell current = board[i, j];
                 if (current.visited)
                 {
                     visited.Add(current);
@@ -48,29 +48,29 @@ public class MazeGenerator : MonoBehaviour
                     newHallway.UpdateRoom(current.walls);
                     newHallway.name += " " + i + "-" + j;
                 }
-                
+
             }
         }
 
         // Generate event-rooms
         EventRooms = new List<Cell>();
-        EventRooms.Add(visited[(int)Floor(.2 * visited.Count-1)]);
-        EventRooms.Add(visited[(int)Floor(.5 * visited.Count-1)]);
-        EventRooms.Add(visited[(int)Floor(.8 * visited.Count-1)]);
+        EventRooms.Add(visited[(int)Floor(.2 * visited.Count - 1)]);
+        EventRooms.Add(visited[(int)Floor(.5 * visited.Count - 1)]);
+        EventRooms.Add(visited[(int)Floor(.8 * visited.Count - 1)]);
 
-        foreach(Cell room in EventRooms)
+        foreach (Cell room in EventRooms)
         {
             int x = room.pos.x;
             int y = room.pos.y;
             var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
             instEvent.UpdateEventRoom(room.walls);
         }
-        
+
         // Instantiate start/end rooms
         var instStart = Instantiate(StartRoom, new Vector3(0, 0, 0), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-        var instEnd = Instantiate(EndRoom, new Vector3((size.x-1) * offset.x, 0, -(size.y-1) * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-        instStart.UpdateRoom(board[0,0].walls);
-        instEnd.UpdateRoom(board[size.x-1,size.y-1].walls);
+        var instEnd = Instantiate(EndRoom, new Vector3((size.x - 1) * offset.x, 0, -(size.y - 1) * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+        instStart.UpdateRoom(board[0, 0].walls);
+        instEnd.UpdateRoom(board[size.x - 1, size.y - 1].walls);
     }
 
     void GenerateMaze()
@@ -78,10 +78,10 @@ public class MazeGenerator : MonoBehaviour
         board = new Cell[size.x, size.y];
         for (int i = 0; i < size.x; i++)
         {
-            for(int j = 0; j < size.y; j++)
+            for (int j = 0; j < size.y; j++)
             {
-                board[i,j] = new Cell();
-                board[i,j].pos = new Vector2Int(i, j);
+                board[i, j] = new Cell();
+                board[i, j].pos = new Vector2Int(i, j);
             }
         }
 
@@ -91,10 +91,10 @@ public class MazeGenerator : MonoBehaviour
         Stack<Cell> dfs = new Stack<Cell>();
         dfs.Push(current);
 
-        while(dfs.Count != 0)
+        while (dfs.Count != 0)
         {
             current = dfs.Pop();
-            if (current == board[size.x-1, size.y-1])
+            if (current == board[size.x - 1, size.y - 1])
             {
                 break;
             }
@@ -150,35 +150,32 @@ public class MazeGenerator : MonoBehaviour
         List<Cell> neighbors = new List<Cell>();
         int x = current.pos.x;
         int y = current.pos.y;
-        
+
         // East Neighbor
-        if (x+1 < size.x && !board[x+1, y].visited)
+        if (x + 1 < size.x && !board[x + 1, y].visited)
         {
-            neighbors.Add(board[x+1, y]);
+            neighbors.Add(board[x + 1, y]);
         }
 
         // West Neighbor
-        if (x-1 >= 0 && !board[x-1, y].visited)
+        if (x - 1 >= 0 && !board[x - 1, y].visited)
         {
-            neighbors.Add(board[x-1, y]);
+            neighbors.Add(board[x - 1, y]);
         }
 
         // South Neighbor
-        if (y-1 >= 0 && !board[x, y-1].visited)
+        if (y - 1 >= 0 && !board[x, y - 1].visited)
         {
-            neighbors.Add(board[x, y-1]);
+            neighbors.Add(board[x, y - 1]);
         }
 
         // North Neighbor
-        if (y+1 < size.y && !board[x, y+1].visited)
+        if (y + 1 < size.y && !board[x, y + 1].visited)
         {
-            neighbors.Add(board[x, y+1]);
+            neighbors.Add(board[x, y + 1]);
         }
 
         return neighbors;
     }
-    
+
 }
-
-
-// Maze  
