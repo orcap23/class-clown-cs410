@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    // check for object not moving found https://answers.unity.com/questions/739505/how-to-check-if-an-object-has-stopped-moving.html
     [SerializeField] private Transform playerCam;
     [SerializeField] private LayerMask pickupable;
     [SerializeField] private float pickupdist = 2f;
