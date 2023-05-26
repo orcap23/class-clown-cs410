@@ -13,6 +13,7 @@ namespace Player
 		public bool aim;
 		public bool crouch;
 
+
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -42,6 +43,7 @@ namespace Player
 		{
 			CrouchInput(value.isPressed);
 		}
+
 #endif
 
 		public void MoveInput(Vector2 newMoveDirection)
@@ -60,6 +62,7 @@ namespace Player
 		{
 			crouch = newCrouchState;
 		}
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);

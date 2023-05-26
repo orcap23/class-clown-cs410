@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1047380914293191383}
   - component: {fileID: 1047380914293191380}
   m_Layer: 0
-  m_Name: StartRoom
+  m_Name: Hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1047380914293191382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.016875684, y: 0.19199301, z: 0.20220947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1047380913850577497}
@@ -155,6 +155,7 @@ MonoBehaviour:
   - {fileID: 7688727748261825531}
   - {fileID: 1047380913720370988}
   - {fileID: 151810204264036237}
+  triggerDoors: []
 --- !u!1 &3458052535230538792
 GameObject:
   m_ObjectHideFlags: 0
