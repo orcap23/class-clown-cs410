@@ -1,4 +1,0 @@
-repository "class-clown@cs410@cloud"
-  path "/"
-    br "/main"
-    co "/main"
