@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-<<<<<<< HEAD:Class Clown/Assets/Scripts/MazeGenerator.cs
     public Vector2Int size;
     public Vector2Int startpos;
     Cell[,] board;
@@ -24,17 +23,6 @@ public class MazeGenerator : MonoBehaviour
     }
 
 
-||||||| b8d9a50:Class Clown/Assets/Scripts/MazeGenerator.cs
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GenerateMaze();
-    }
-
-
-=======
->>>>>>> 4c5838db0d40825c3f031bb8088e60b25764c10a:Class Clown/Assets/Scripts/MazeGen/MazeGenerator.cs
     public class Cell
     {
         public bool[] walls = new bool[4];
@@ -42,17 +30,7 @@ public class MazeGenerator : MonoBehaviour
         public Vector2Int pos;
     }
 
-<<<<<<< HEAD:Class Clown/Assets/Scripts/MazeGenerator.cs
     void GenerateSchool()
-||||||| b8d9a50:Class Clown/Assets/Scripts/MazeGenerator.cs
-    void GenerateHallways()
-=======
-    void Start()
-    {
-        GenerateMaze();
-    }
-    void GenerateHallways()
->>>>>>> 4c5838db0d40825c3f031bb8088e60b25764c10a:Class Clown/Assets/Scripts/MazeGen/MazeGenerator.cs
     {
         List<Cell> visited = new List<Cell>();
         
@@ -62,7 +40,6 @@ public class MazeGenerator : MonoBehaviour
         {
             for (int j = 0; j < size.y; j++)
             {
-<<<<<<< HEAD:Class Clown/Assets/Scripts/MazeGenerator.cs
                 Cell current = board[i,j];
                 if (current.visited)
                 {
@@ -72,15 +49,6 @@ public class MazeGenerator : MonoBehaviour
                     newHallway.name += " " + i + "-" + j;
                 }
                 
-||||||| b8d9a50:Class Clown/Assets/Scripts/MazeGenerator.cs
-                //Debug.Log(board[i,j].visited);
-                var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-                newHallway.UpdateRoom(board[i,j].walls);
-=======
-                //Debug.Log(board[i,j].visited);
-                RoomBehavior newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-                newHallway.UpdateRoom(board[i,j].walls);
->>>>>>> 4c5838db0d40825c3f031bb8088e60b25764c10a:Class Clown/Assets/Scripts/MazeGen/MazeGenerator.cs
             }
         }
 
