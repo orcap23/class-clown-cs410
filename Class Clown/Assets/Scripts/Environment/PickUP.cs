@@ -7,13 +7,13 @@ public class PickUP : MonoBehaviour
     private Transform grabpoint;
     private Rigidbody rb;
     private GameObject Player;
-    // check for object not moving found https://answers.unity.com/questions/739505/how-to-check-if-an-object-has-stopped-moving.html
+
 
 
     public void Grab(Transform point, GameObject Player)
     {
         this.Player = Player;
-        this.grabpoint = point;
+        grabpoint = point;
 
         if (gameObject.GetComponent<Rigidbody>() == null)
         {
@@ -22,6 +22,7 @@ public class PickUP : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         Physics.IgnoreCollision(Player.GetComponent<Collider>(), GetComponent<Collider>(), true);
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.isKinematic = true;
         rb.useGravity = false;
     }
@@ -45,7 +46,7 @@ public class PickUP : MonoBehaviour
     {
         if(grabpoint != null)
         {
-            float lerpspeed = 20f;
+            float lerpspeed = 10f;
             Vector3 newpos  = Vector3.Lerp(transform.position, grabpoint.position, Time.deltaTime * lerpspeed);
             rb.MovePosition(newpos);
         }
