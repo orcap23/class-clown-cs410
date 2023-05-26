@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using static System.Math;
 using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+    public Vector2Int size;
+    public Vector2Int startpos;
+    Cell[,] board;
+    public GameObject Hallway;
+    public GameObject TriggerRoom;
+    public GameObject StartRoom;
+    public GameObject EndRoom;
+    public List<Cell> EventRooms; // 0: Gym, 1: Office, 2: cafe
+    public Vector2Int offset;
+    public int nTriggers = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -15,25 +26,51 @@ public class MazeGenerator : MonoBehaviour
     public class Cell
     {
         public bool[] walls = new bool[4];
-        public bool visited = false;
+        public bool visited;
         public Vector2Int pos;
     }
-    public Vector2Int size;
-    Cell[,] board;
-    public GameObject Hallway;
-    public Vector2Int offset;
 
-    void GenerateHallways()
+    void GenerateSchool()
     {
+        List<Cell> visited = new List<Cell>();
+        
+
+        // Generate rooms using maze data structure
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
             {
-                //Debug.Log(board[i,j].visited);
-                var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-                newHallway.UpdateRoom(board[i,j].walls);
+                Cell current = board[i,j];
+                if (current.visited)
+                {
+                    visited.Add(current);
+                    var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+                    newHallway.UpdateRoom(current.walls);
+                    newHallway.name += " " + i + "-" + j;
+                }
+                
             }
         }
+
+        // Generate event-rooms
+        EventRooms = new List<Cell>();
+        EventRooms.Add(visited[(int)Floor(.2 * visited.Count-1)]);
+        EventRooms.Add(visited[(int)Floor(.5 * visited.Count-1)]);
+        EventRooms.Add(visited[(int)Floor(.8 * visited.Count-1)]);
+
+        foreach(Cell room in EventRooms)
+        {
+            int x = room.pos.x;
+            int y = room.pos.y;
+            var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+            instEvent.UpdateEventRoom(room.walls);
+        }
+        
+        // Instantiate start/end rooms
+        var instStart = Instantiate(StartRoom, new Vector3(0, 0, 0), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+        var instEnd = Instantiate(EndRoom, new Vector3((size.x-1) * offset.x, 0, -(size.y-1) * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+        instStart.UpdateRoom(board[0,0].walls);
+        instEnd.UpdateRoom(board[size.x-1,size.y-1].walls);
     }
 
     void GenerateMaze()
@@ -48,7 +85,7 @@ public class MazeGenerator : MonoBehaviour
             }
         }
 
-        Cell current = board[0,0];
+        Cell current = board[startpos.x, startpos.y];
         current.visited = true;
 
         Stack<Cell> dfs = new Stack<Cell>();
@@ -57,7 +94,11 @@ public class MazeGenerator : MonoBehaviour
         while(dfs.Count != 0)
         {
             current = dfs.Pop();
-            Debug.Log(current.pos);
+            if (current == board[size.x-1, size.y-1])
+            {
+                break;
+            }
+            //Debug.Log(current.pos);
             List<Cell> neighbors = getNeighbors(current);
             if (neighbors.Count != 0)
             {
@@ -69,7 +110,7 @@ public class MazeGenerator : MonoBehaviour
                 dfs.Push(current);
             }
         }
-        GenerateHallways();
+        GenerateSchool();
     }
 
     void breakWall(Cell current, Cell nextCell)
