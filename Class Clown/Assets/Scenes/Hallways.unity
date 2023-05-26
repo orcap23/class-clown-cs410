@@ -177,12 +177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c099fc4b85d760641ba702a6892c7da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   size: {x: 7, y: 15}
   startpos: {x: 0, y: 0}
   Hallway: {fileID: 6701082189602273230, guid: 9741418c0e177984ca68116f400a7253, type: 3}
   TriggerRoom: {fileID: 3794522916404415773, guid: fbcb6331a29a1ab4bb7a559cf81b77c9, type: 3}
   StartRoom: {fileID: 1047380914293191382, guid: 37d1c44ad4c4d76418478ee301f62935, type: 3}
   EndRoom: {fileID: 9006418656404578837, guid: a833612f800ce1f40b6eef5e978c8196, type: 3}
+||||||| b8d9a50
+  size: {x: 10, y: 10}
+  Hallway: {fileID: 6701082189602273230, guid: 9741418c0e177984ca68116f400a7253, type: 3}
+=======
+  size: {x: 10, y: 10}
+  Hallway: {fileID: 3382337195589988136, guid: c36f59ce8e49097428356b1131bb0aea, type: 3}
+>>>>>>> 4c5838db0d40825c3f031bb8088e60b25764c10a
   offset: {x: 10, y: 10}
   nTriggers: 3
 --- !u!4 &102757782
