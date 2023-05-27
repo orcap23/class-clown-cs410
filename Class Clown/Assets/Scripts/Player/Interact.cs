@@ -68,58 +68,61 @@ public class Interact : MonoBehaviour
                 isMoving = false;
             }
         }
-        if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit selectable, pickupdist, pickupable))
+        if (OpenPrankList.ToDoOpen == false)
         {
-            highlight = selectable.transform;
-            if (selectable.transform.CompareTag("Selectable"))
+            if (Physics.Raycast(playerCam.position, playerCam.forward, out RaycastHit selectable, pickupdist, pickupable))
             {
-                if (highlight.gameObject.GetComponent<Outline>() != null)
+                highlight = selectable.transform;
+                if (selectable.transform.CompareTag("Selectable"))
                 {
-                    highlight.gameObject.GetComponent<Outline>().enabled = true;
+                    if (highlight.gameObject.GetComponent<Outline>() != null)
+                    {
+                        highlight.gameObject.GetComponent<Outline>().enabled = true;
+                    }
+                    else
+                    {
+                        Outline outline = highlight.gameObject.AddComponent<Outline>();
+                        outline.enabled = true;
+                        highlight.gameObject.GetComponent<Outline>().OutlineColor = Color.red;
+                        highlight.gameObject.GetComponent<Outline>().OutlineWidth = 7.0f;
+                    }
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        if (highlight.TryGetComponent(out PickUP PickUP))
+                        {
+                            PickUP.Grab(grabpoint, gameObject);
+                            held = PickUP.gameObject;
+                            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), held.GetComponent<Collider>());
+                            holding = true;
+                            pickupSound.Play();
+                        }
+                        else if (highlight.TryGetComponent(out Openable openable))
+                        {
+                            openable.open();
+                        }
+
+                    }
                 }
                 else
                 {
-                    Outline outline = highlight.gameObject.AddComponent<Outline>();
-                    outline.enabled = true;
-                    highlight.gameObject.GetComponent<Outline>().OutlineColor = Color.red;
-                    highlight.gameObject.GetComponent<Outline>().OutlineWidth = 7.0f;
+                    highlight = null;
                 }
-                if (Input.GetKeyDown(KeyCode.E))
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (holding && held != null)
                 {
-                    if (highlight.TryGetComponent(out PickUP PickUP))
-                    {
-                        PickUP.Grab(grabpoint, gameObject);
-                        held = PickUP.gameObject;
-                        Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), held.GetComponent<Collider>());
-                        holding = true;
-                        pickupSound.Play();
-                    }
-                    else if (highlight.TryGetComponent(out Openable openable))
-                    {
-                        openable.open();
-                    }
-
+                    Debug.Log("Throw");
+                    holding = false;
+                    throwSound.Play();
+                    held.GetComponent<PickUP>().Throw(gameObject.transform);
+                    held = null;
                 }
             }
-            else
+            if (held != null)
             {
-                highlight = null;
+                held.transform.rotation = Quaternion.Lerp(held.transform.rotation, playerCam.rotation, 12 * Time.deltaTime);
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(holding && held != null)
-            {
-                Debug.Log("Throw");
-                holding = false;
-                throwSound.Play();
-                held.GetComponent<PickUP>().Throw(gameObject.transform);
-                held = null;
-            }
-        }
-        if (held != null)
-        {
-            held.transform.rotation = Quaternion.Lerp(held.transform.rotation,playerCam.rotation, 12*Time.deltaTime);
         }
     }
 }
