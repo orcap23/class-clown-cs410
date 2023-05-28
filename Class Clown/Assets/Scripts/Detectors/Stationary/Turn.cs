@@ -10,15 +10,6 @@ public class Turn : MonoBehaviour
     {
         StartCoroutine(TurnAround(180));
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name == "Player")
-        {
-            Debug.Log("Caught");
-        }
-    }
-
     IEnumerator LerpTurn(float duration, float startyangle, float targetyangle)
     {
         float time = 0;
