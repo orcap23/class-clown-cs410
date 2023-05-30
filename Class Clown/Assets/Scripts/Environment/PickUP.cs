@@ -7,7 +7,7 @@ public class PickUP : MonoBehaviour
     private Transform grabpoint;
     private Rigidbody rb;
     private GameObject Player;
-
+    public float throwpower = 20f;
 
 
     public void Grab(Transform point, GameObject Player)
@@ -32,15 +32,15 @@ public class PickUP : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
     }
+
     public void Throw(Transform Player)
     {
         grabpoint = null;
         rb.isKinematic = false;
         rb.useGravity = true;
         Physics.IgnoreCollision(Player.GetComponent<Collider>(), GetComponent<Collider>(), true);
-        rb.AddForce(transform.forward * 10, ForceMode.Impulse);
+        rb.velocity = transform.forward*throwpower + transform.up*2;
         StartCoroutine(Wait());
-
     }
     private void FixedUpdate()
     {
