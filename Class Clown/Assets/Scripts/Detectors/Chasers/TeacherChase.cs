@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeacherChase : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool chasing = false;
     void Start()
     {
         

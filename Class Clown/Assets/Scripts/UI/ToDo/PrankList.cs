@@ -31,6 +31,7 @@ public class PrankList : MonoBehaviour
             }
             used[i] = index;
             PrankText[i].text = pranks[index];
+            PrankText[i].color = Color.black;
         }
 
     }

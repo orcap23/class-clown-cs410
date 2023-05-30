@@ -32,10 +32,6 @@ namespace Player
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
-        [Space(10)]
-        [Tooltip("The height the player can jump")]
-        public float JumpHeight = 1.2f;
-
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
 
@@ -81,19 +77,24 @@ namespace Player
 
         // player
         private float _speed;
-        private float _animationBlend;
         private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
         // timeout deltatime
-        private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
 
-        // animation IDs
+        private float _standingHeight = 1.8f;
+        private Vector3 _standingCenter = new Vector3(0.02f,-.55f,0);
+        private float _crouchHeight = 1.2f;
+        private Vector3 _crouchCenter = new Vector3(0.02f,-.85f,0);
+        // .55 center y standing
+        // -.85 center y crouch
+        // crouch 1.2
+        // standing 1.8
 
-#if ENABLE_INPUT_SYSTEM 
+#if ENABLE_INPUT_SYSTEM
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
@@ -141,8 +142,7 @@ namespace Player
 #endif
 
 
-            // reset our timeouts on start
-            _jumpTimeoutDelta = JumpTimeout;
+
             _fallTimeoutDelta = FallTimeout;
         }
 
@@ -193,20 +193,12 @@ namespace Player
             }
             else
             {
-                // reset the jump timeout timer
-                _jumpTimeoutDelta = JumpTimeout;
-
                 // fall timeout
                 if (_fallTimeoutDelta >= 0.0f)
                 {
                     _fallTimeoutDelta -= Time.deltaTime;
                 }
-                else
-                {
-                    // update animator if using character
-                }
             }
-
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
             if (_verticalVelocity < _terminalVelocity)
             {
@@ -239,7 +231,8 @@ namespace Player
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.crouch ? CrouchMoveSpeed : MoveSpeed;
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
-
+            _controller.height = _input.crouch ? _crouchHeight : _standingHeight;
+            _controller.center = _input.crouch ? _crouchCenter : _standingCenter;
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
@@ -266,9 +259,6 @@ namespace Player
             {
                 _speed = targetSpeed;
             }
-
-            _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
-            if (_animationBlend < 0.01f) _animationBlend = 0f;
 
             // normalise input direction
             Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;

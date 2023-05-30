@@ -22,6 +22,7 @@ public class Detection : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
+    [Range(0,20)] public float awareness;
     private Material undetected;
     private PlayerInputs PlayerInput;
     private Material[] matlist;
@@ -32,11 +33,12 @@ public class Detection : MonoBehaviour
         undetected = Detector.materials[MatNum];
         PlayerInput = playerRef.GetComponent<PlayerInputs>();
         StartCoroutine(FOVRoutine());
+        StartCoroutine(Awareness());
     }
     private void Update()
     {
         matlist = Detector.materials;
-        if (canSeePlayer)
+        if (awareness > 4)
         {
             matlist[MatNum] = detected;
             Detector.materials = matlist;
@@ -67,6 +69,23 @@ public class Detection : MonoBehaviour
         }
     }
 
+    private IEnumerator Awareness() 
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
+
+        while (true)
+        {
+            yield return wait;
+            if (canSeePlayer && awareness < 20)
+            {
+                awareness++;
+            }
+            else if (awareness > 0)
+            {
+                awareness--;
+            }
+        }
+    }
     private void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
