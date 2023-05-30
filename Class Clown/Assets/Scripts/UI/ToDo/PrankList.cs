@@ -21,18 +21,31 @@ public class PrankList : MonoBehaviour
         escapes = allescapes.Split(delims, System.StringSplitOptions.RemoveEmptyEntries);
 
         int numpranks = pranks.Length;
-        int[] used = new int [PrankText.Length];
-        for(int i = 0; i < PrankText.Length; i++)
-        {
-            int index = Random.Range(0, numpranks);
-            while (used.Contains<int>(index))
-            {
-                index = Random.Range(0, numpranks);
-            }
-            used[i] = index;
-            PrankText[i].text = pranks[index];
-            PrankText[i].color = Color.black;
-        }
 
+        if (numpranks >= PrankText.Length)
+        {
+            int[] used = new int[PrankText.Length];
+            for (int i = 0; i < PrankText.Length; i++)
+            {
+                int index = Random.Range(0, numpranks);
+                while (used.Contains<int>(index))
+                {
+                    index = Random.Range(0, numpranks);
+                }
+                used[i] = index;
+                PrankText[i].text = pranks[index];
+                PrankText[i].color = Color.black;
+            }
+        }
+        else
+        {
+            int j = 0;
+            while (j < numpranks)
+            {
+                PrankText[j].text = pranks[j];
+                PrankText[j].color = Color.black;
+                j++;
+            }
+        }
     }
 }

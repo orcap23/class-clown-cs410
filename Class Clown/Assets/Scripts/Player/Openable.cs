@@ -9,28 +9,32 @@ public class Openable : MonoBehaviour
     private Vector3 startangle;
     // funny mutex lock but not really
     private bool opening = false;
+    public bool locked = false;
     public void open()
     {
-        startangle = transform.eulerAngles;
-        targetangle = startangle;
-        if (!isopen)
+        if (!locked)
         {
-            targetangle.y = startangle.y + 90;
-            if (!opening)
+            startangle = transform.eulerAngles;
+            targetangle = startangle;
+            if (!isopen)
             {
-                StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));
-                opening = true;
-                isopen = true;
+                targetangle.y = startangle.y + 90;
+                if (!opening)
+                {
+                    StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));
+                    opening = true;
+                    isopen = true;
+                }
             }
-        }
-        else
-        {
-            targetangle.y = startangle.y - 90;
-            if (!opening)
+            else
             {
-                StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));
-                opening = true;
-                isopen = false;
+                targetangle.y = startangle.y - 90;
+                if (!opening)
+                {
+                    StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));
+                    opening = true;
+                    isopen = false;
+                }
             }
         }
     }
