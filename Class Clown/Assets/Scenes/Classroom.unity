@@ -296,8 +296,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40960105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 4.142, z: 8.79}
-  m_LocalScale: {x: 0.100000024, y: 0.31, z: 2.3}
+  m_LocalPosition: {x: 10, y: 4.138, z: 8.79}
+  m_LocalScale: {x: 0.100000024, y: 0.25, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 249037186}
@@ -3012,8 +3012,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1934121, y: 2.306233, z: 1.1934122}
-  m_Center: {x: -0.00000011946067, y: 1.0796374, z: -0.0000004728152}
+  m_Size: {x: 1.1934121, y: 2.638503, z: 1.1934122}
+  m_Center: {x: -0.00000013813491, y: 0.9134987, z: -0.0000004675196}
 --- !u!64 &1725422941
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3525,7 +3525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5cbb03182936e4094257586f09fd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwpower: 30
+  throwpower: 20
 --- !u!136 &2130258093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4341,6 +4341,18 @@ PrefabInstance:
     - target: {fileID: 1965174427742988476, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
       propertyPath: CameraCollisionFilter.m_Bits
       value: 129
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325296473906907752, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325296473906907752, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.657
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325296473906907752, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.311
       objectReference: {fileID: 0}
     - target: {fileID: 8786811694916980192, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
       propertyPath: CameraRadius
@@ -14356,6 +14368,10 @@ PrefabInstance:
       propertyPath: pickupSound
       value: 
       objectReference: {fileID: 865214062}
+    - target: {fileID: 5581192296093328617, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+      propertyPath: canPush
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5581192296093328622, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
       propertyPath: m_Name
       value: Player
@@ -23408,7 +23424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5cbb03182936e4094257586f09fd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwpower: 10
+  throwpower: 20
 --- !u!65 &8928492148524389899
 BoxCollider:
   m_ObjectHideFlags: 0
