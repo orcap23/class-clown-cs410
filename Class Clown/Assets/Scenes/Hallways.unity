@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c099fc4b85d760641ba702a6892c7da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 7, y: 15}
+  size: {x: 7, y: 10}
   startpos: {x: 0, y: 0}
-  Hallway: {fileID: 1047380914293191382, guid: 8d08f12c70cd8fd4ab6d88220b02d540, type: 3}
+  Hallway: {fileID: 1047380914293191382, guid: fa7b9b65e750fcc4b92dfbb54db4bde9, type: 3}
   TriggerRoom: {fileID: 3794522916404415773, guid: fbcb6331a29a1ab4bb7a559cf81b77c9, type: 3}
   StartRoom: {fileID: 1047380914293191382, guid: 37d1c44ad4c4d76418478ee301f62935, type: 3}
   EndRoom: {fileID: 9006418656404578837, guid: 5672d43c92eae934a8bcf3b6407d87c4, type: 3}
-  offset: {x: 10, y: 10}
+  offset: {x: 20, y: 20}
   nTriggers: 3
 --- !u!4 &102757782
 Transform:
