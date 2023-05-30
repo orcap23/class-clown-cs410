@@ -16,17 +16,24 @@ public class Interact : MonoBehaviour
     private bool isMoving;
 
     Vector3[] prev = new Vector3[nomoveframe];
-    public bool IsMoving
-    {
-        get { return isMoving; }
-    }
+
 
     private Transform highlight;
     private bool holding = false;
     private GameObject held;
-    public GameObject getHeld
+    private float throwpower;
+    
+    public GameObject GetHeld
     {
-        get { return held;}
+        get { return held; }
+    }
+    public bool IsMoving
+    {
+        get { return isMoving; }
+    }
+    public float GetThrowPower
+    {
+        get { return throwpower; }
     }
     void Awake()
     {
@@ -92,6 +99,7 @@ public class Interact : MonoBehaviour
                         {
                             PickUP.Grab(grabpoint, gameObject);
                             held = PickUP.gameObject;
+                            throwpower = PickUP.throwpower;
                             Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), held.GetComponent<Collider>());
                             holding = true;
                             pickupSound.Play();
