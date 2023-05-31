@@ -12,6 +12,7 @@ public class PrankList : MonoBehaviour
     public TextAsset escapefile;
     public string[] pranks;
     public string[] escapes;
+    public int pranksdone = 0;
     void Start()
     {
         char[] delims = new[] { '\r', '\n' };
@@ -21,8 +22,9 @@ public class PrankList : MonoBehaviour
         escapes = allescapes.Split(delims, System.StringSplitOptions.RemoveEmptyEntries);
 
         int numpranks = pranks.Length;
-
-        if (numpranks >= PrankText.Length)
+        Debug.Log(numpranks);
+        Debug.Log(PrankText.Length);
+        if (numpranks > PrankText.Length)
         {
             int[] used = new int[PrankText.Length];
             for (int i = 0; i < PrankText.Length; i++)
