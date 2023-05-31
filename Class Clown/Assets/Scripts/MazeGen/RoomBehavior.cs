@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomBehavior : MonoBehaviour
 {
     // 0 : North, 1 : South, 2 : East, 3 : West
     public GameObject[] walls;
     public GameObject[] triggerDoors;
+    public int levelIndex;
 
     public void UpdateRoom(bool[] status)
     {
@@ -16,7 +18,7 @@ public class RoomBehavior : MonoBehaviour
         }
     }
 
-    public void UpdateEventRoom(bool[] status)
+    public void UpdateEventRoom(bool[] status, int index)
     {
         List<int> active = new List<int>();
         for (int i = 0; i < status.Length; i++)
@@ -29,5 +31,6 @@ public class RoomBehavior : MonoBehaviour
             }
         }
         triggerDoors[active[Random.Range(0, active.Count)]].SetActive(true);
+        levelIndex = index;
     }
 }

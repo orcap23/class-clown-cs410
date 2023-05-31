@@ -14,7 +14,7 @@ public class MazeGenerator : MonoBehaviour
     public GameObject EndRoom;
     public List<Cell> EventRooms; // 0: Gym, 1: Office, 2: cafe
     public Vector2Int offset;
-    public int nTriggers = 3;
+    public int nTriggers = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -55,15 +55,16 @@ public class MazeGenerator : MonoBehaviour
         // Generate event-rooms
         EventRooms = new List<Cell>();
         EventRooms.Add(visited[(int)Floor(.2 * visited.Count - 1)]);
-        EventRooms.Add(visited[(int)Floor(.5 * visited.Count - 1)]);
+        //EventRooms.Add(visited[(int)Floor(.5 * visited.Count - 1)]);
         EventRooms.Add(visited[(int)Floor(.8 * visited.Count - 1)]);
-
+        int idx = 3;
         foreach (Cell room in EventRooms)
         {
             int x = room.pos.x;
             int y = room.pos.y;
             var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-            instEvent.UpdateEventRoom(room.walls);
+            instEvent.UpdateEventRoom(room.walls, idx);
+            idx++;
         }
 
         // Instantiate start/end rooms
