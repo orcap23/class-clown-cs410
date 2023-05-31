@@ -71,7 +71,8 @@ public class MazeGenerator : MonoBehaviour
             }
             if (idx == 4)
             {
-
+                var cafe_hallway = GameObject.Find("Cafe_Hallway").GetComponent<RoomBehavior>();
+                cafe_hallway.SetTpCoords(new Vector3(x * offset.x, 1.3f, -y * offset.y));
             }
             idx++;
         }
