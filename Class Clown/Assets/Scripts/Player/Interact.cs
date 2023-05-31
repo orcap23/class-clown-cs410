@@ -108,6 +108,11 @@ public class Interact : MonoBehaviour
                         {
                             openable.open();
                         }
+                        else if(highlight.TryGetComponent(out FireAlarm FireEscape))
+                        {
+                            Debug.Log("FireEscape!");
+                            FireEscape.Escape();
+                        }
 
                     }
                 }

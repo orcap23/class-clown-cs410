@@ -38,7 +38,7 @@ public class Detection : MonoBehaviour
     private void Update()
     {
         matlist = Detector.materials;
-        if (awareness > 4)
+        if (awareness > 10)
         {
             matlist[MatNum] = detected;
             Detector.materials = matlist;

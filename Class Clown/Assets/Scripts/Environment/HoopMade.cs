@@ -13,13 +13,15 @@ public class HoopMade : MonoBehaviour
             Debug.Log("Hoop made");
             for (int i = 0;  i<list.PrankText.Length; i++)
             {
-                if (list.PrankText[i].text == "Make a half court shot")
+                if (list.PrankText[i].text == "Make a half court shot" && list.PrankText[i].color != Color.green)
                 {
                     list.PrankText[i].color = Color.green;
+                    list.pranksdone++;
                 }
-                if (list.PrankText[i].text == "Make a hoop")
+                if (list.PrankText[i].text == "Make a hoop" && list.PrankText[i].color != Color.green)
                 {
                     list.PrankText[i].color = Color.green;
+                    list.pranksdone++;
                 }
             }
         }
