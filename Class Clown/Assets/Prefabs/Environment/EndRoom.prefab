@@ -3306,7 +3306,7 @@ GameObject:
   - component: {fileID: 9006418656404578839}
   m_Layer: 0
   m_Name: EndRoom
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3349,6 +3349,7 @@ MonoBehaviour:
   - {fileID: 2421727556237040312}
   - {fileID: 2644763677724097325}
   triggerDoors: []
+  levelIndex: 0
 --- !u!1 &9006418657170711195
 GameObject:
   m_ObjectHideFlags: 0

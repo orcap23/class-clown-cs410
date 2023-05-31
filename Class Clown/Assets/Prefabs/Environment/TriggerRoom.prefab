@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 3794522916404415775}
   m_Layer: 0
   m_Name: TriggerRoom
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

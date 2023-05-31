@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1047380914293191380}
   m_Layer: 0
   m_Name: StartRoom
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 1047380913720370988}
   - {fileID: 151810204264036237}
   triggerDoors: []
+  levelIndex: 0
 --- !u!1 &3458052535230538792
 GameObject:
   m_ObjectHideFlags: 0
