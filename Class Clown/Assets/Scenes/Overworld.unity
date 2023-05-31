@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26971948, g: 0.54827344, b: 0.85198486, a: 1}
+  m_IndirectSpecularColor: {r: 0.269751, g: 0.5482996, b: 0.85198385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10394,7 +10394,7 @@ MonoBehaviour:
   Hallway: {fileID: 1047380914293191382, guid: fa7b9b65e750fcc4b92dfbb54db4bde9, type: 3}
   TriggerRoom: {fileID: 3794522916404415773, guid: fbcb6331a29a1ab4bb7a559cf81b77c9, type: 3}
   StartRoom: {fileID: 1047380914293191382, guid: 37d1c44ad4c4d76418478ee301f62935, type: 3}
-  EndRoom: {fileID: 9006418656404578837, guid: 5672d43c92eae934a8bcf3b6407d87c4, type: 3}
+  EndRoom: {fileID: 9006418656404578837, guid: 503a9ce845195684f89c025edb1e1730, type: 3}
   offset: {x: 10, y: 10}
   nTriggers: 3
 --- !u!4 &7210811835115058006
