@@ -11,8 +11,7 @@ public class TriggerScene : MonoBehaviour
         var components = room.GetComponent<RoomBehavior>();
         if(other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(components.levelIndex);
-            Debug.Log(components.levelIndex);
+            other.gameObject.transform.position = components.tp_coords;
         }
             
     }

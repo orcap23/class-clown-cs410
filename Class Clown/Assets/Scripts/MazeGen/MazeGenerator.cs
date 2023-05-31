@@ -64,6 +64,15 @@ public class MazeGenerator : MonoBehaviour
             int y = room.pos.y;
             var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
             instEvent.UpdateEventRoom(room.walls, idx);
+            if (idx == 3)
+            {
+                var gym_hallway = GameObject.Find("Gym_Hallway").GetComponent<RoomBehavior>();
+                gym_hallway.SetTpCoords(new Vector3(x * offset.x, 1.3f, -y * offset.y));
+            }
+            if (idx == 4)
+            {
+
+            }
             idx++;
         }
 
