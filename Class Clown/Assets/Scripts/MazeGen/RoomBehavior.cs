@@ -8,7 +8,7 @@ public class RoomBehavior : MonoBehaviour
     // 0 : North, 1 : South, 2 : East, 3 : West
     public GameObject[] walls;
     public GameObject[] triggerDoors;
-    public int levelIndex;
+    public Vector3 tp_coords;
 
     public void UpdateRoom(bool[] status)
     {
@@ -31,6 +31,18 @@ public class RoomBehavior : MonoBehaviour
             }
         }
         triggerDoors[active[Random.Range(0, active.Count)]].SetActive(true);
-        levelIndex = index;
+        if (index == 3)
+        {
+            tp_coords = new Vector3(30, 1.3f, 40);
+        }
+        if (index == 4)
+        {
+            tp_coords = new Vector3(-5, 1.3f, 59);
+        }
+    }
+
+    public void SetTpCoords(Vector3 newcoords)
+    {
+        tp_coords = newcoords;
     }
 }
