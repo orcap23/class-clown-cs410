@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26971948, g: 0.54827344, b: 0.85198486, a: 1}
+  m_IndirectSpecularColor: {r: 0.269751, g: 0.5482996, b: 0.85198385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 4328843868415524670, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+      propertyPath: list
+      value: 
+      objectReference: {fileID: 1726095328}
     - target: {fileID: 5870404784093505856, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
@@ -1232,6 +1236,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+--- !u!114 &1726095328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3267208425287045776, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+  m_PrefabInstance: {fileID: 1726095327}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e093c28f82ee1704a843e170b1d39a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1791911202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dae31d51c57a21947b92a9515ab54682, type: 3}
@@ -2783,7 +2798,7 @@ PrefabInstance:
     - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: list
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1726095328}
     - target: {fileID: 8352385303568314516, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -9673,7 +9688,7 @@ PrefabInstance:
     - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: list
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1726095328}
     - target: {fileID: 8097433438907823728, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Size.y
       value: 0.003874053
