@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100004, guid: ae7e78cff8b0f414ba216ffd9ee842b3, type: 3}
       propertyPath: m_Name
-      value: Trigger Door
+      value: Trigger Door Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: ae7e78cff8b0f414ba216ffd9ee842b3, type: 3}
       propertyPath: m_RootOrder
