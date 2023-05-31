@@ -5,11 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame() {
+    public void PlayGameClassroom() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    public void PlayGameHallways()
+    {
+        SceneManager.LoadScene(2);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void PlayGameGym()
+    {
+        SceneManager.LoadScene(3);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     public void QuitGame() {
         Application.Quit();
     }

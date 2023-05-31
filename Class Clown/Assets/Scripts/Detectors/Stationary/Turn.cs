@@ -53,6 +53,6 @@ public class Turn : MonoBehaviour
             yield return StartCoroutine(LerpTurn(3, startangle, startangle-degree));
             yield return new WaitForSeconds(2);
         }
-
+        yield return null;
     }
 }

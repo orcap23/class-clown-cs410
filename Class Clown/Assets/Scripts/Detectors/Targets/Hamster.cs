@@ -16,9 +16,10 @@ public class Hamster : MonoBehaviour
             {
                 for (int i = 0; i < list.PrankText.Length; i++)
                 {
-                    if (list.PrankText[i].text == "\"Chuck\" the Hamster")
+                    if (list.PrankText[i].text == "Chuck the Hamster" && list.PrankText[i].color != Color.green)
                     {
                         list.PrankText[i].color = Color.green;
+                        list.pranksdone++;
                     }
                 }
             }

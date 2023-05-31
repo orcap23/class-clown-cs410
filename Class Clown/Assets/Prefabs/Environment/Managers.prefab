@@ -501,5 +501,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 0}
-  EscapeTriggers: []
   pranksaredone: 0
