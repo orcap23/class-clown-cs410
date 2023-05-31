@@ -158,7 +158,7 @@ MonoBehaviour:
   TriggerRoom: {fileID: 3794522916404415773, guid: fbcb6331a29a1ab4bb7a559cf81b77c9, type: 3}
   StartRoom: {fileID: 1047380914293191382, guid: 37d1c44ad4c4d76418478ee301f62935, type: 3}
   EndRoom: {fileID: 9006418656404578837, guid: 5672d43c92eae934a8bcf3b6407d87c4, type: 3}
-  offset: {x: 20, y: 20}
+  offset: {x: 10, y: 10}
   nTriggers: 3
 --- !u!4 &102757782
 Transform:
