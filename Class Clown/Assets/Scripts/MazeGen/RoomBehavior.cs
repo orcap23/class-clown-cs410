@@ -9,6 +9,8 @@ public class RoomBehavior : MonoBehaviour
     public GameObject[] walls;
     public GameObject[] triggerDoors;
     public Vector3 tp_coords;
+    public bool setRot = false;
+    public Vector3 tp_rot;
 
     public void UpdateRoom(bool[] status)
     {
@@ -18,7 +20,7 @@ public class RoomBehavior : MonoBehaviour
         }
     }
 
-    public void UpdateEventRoom(bool[] status, int index)
+    public void UpdateEventRoom(bool[] status, int RoomID)
     {
         List<int> active = new List<int>();
         for (int i = 0; i < status.Length; i++)
@@ -31,18 +33,22 @@ public class RoomBehavior : MonoBehaviour
             }
         }
         triggerDoors[active[Random.Range(0, active.Count)]].SetActive(true);
-        if (index == 3)
+        if (RoomID == 0)
         {
-            tp_coords = new Vector3(30, 1.3f, 40);
+            tp_coords = new Vector3(30f, 0.051f, 34f);
+            tp_rot = new Vector3(0, 270, 0);
+            setRot = true;
         }
-        if (index == 4)
+        if (RoomID == 1)
         {
-            tp_coords = new Vector3(-5, 1.3f, 59);
+            tp_coords = new Vector3(-1, 1.3f, 57.8f);
+            tp_rot = new Vector3(0, 270, 0);
+            setRot = true;
         }
     }
 
-    public void SetTpCoords(Vector3 newcoords)
+    public void SetPos(Vector3 NewPos)
     {
-        tp_coords = newcoords;
+        tp_coords = NewPos;
     }
 }

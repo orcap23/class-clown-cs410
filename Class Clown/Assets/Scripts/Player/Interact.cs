@@ -113,6 +113,10 @@ public class Interact : MonoBehaviour
                             Debug.Log("FireEscape!");
                             FireEscape.Escape();
                         }
+                        else if(highlight.TryGetComponent(out VendingMachine vendingmachine))
+                        {
+                            vendingmachine.PlayAnimation();
+                        }
 
                     }
                 }

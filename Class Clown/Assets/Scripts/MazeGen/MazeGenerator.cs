@@ -57,22 +57,22 @@ public class MazeGenerator : MonoBehaviour
         EventRooms.Add(visited[(int)Floor(.2 * visited.Count - 1)]);
         //EventRooms.Add(visited[(int)Floor(.5 * visited.Count - 1)]);
         EventRooms.Add(visited[(int)Floor(.8 * visited.Count - 1)]);
-        int idx = 3;
+        int idx = 0;
         foreach (Cell room in EventRooms)
         {
             int x = room.pos.x;
             int y = room.pos.y;
             var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
             instEvent.UpdateEventRoom(room.walls, idx);
-            if (idx == 3)
+            if (idx == 0)
             {
                 var gym_hallway = GameObject.Find("Gym_Hallway").GetComponent<RoomBehavior>();
-                gym_hallway.SetTpCoords(new Vector3(x * offset.x, 1.3f, -y * offset.y));
+                gym_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
             }
-            if (idx == 4)
+            if (idx == 1)
             {
                 var cafe_hallway = GameObject.Find("Cafe_Hallway").GetComponent<RoomBehavior>();
-                cafe_hallway.SetTpCoords(new Vector3(x * offset.x, 1.3f, -y * offset.y));
+                cafe_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
             }
             idx++;
         }
