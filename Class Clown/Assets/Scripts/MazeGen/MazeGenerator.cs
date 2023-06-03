@@ -67,12 +67,12 @@ public class MazeGenerator : MonoBehaviour
             if (idx == 0)
             {
                 var gym_hallway = GameObject.Find("Gym_Hallway").GetComponent<RoomBehavior>();
-                gym_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
+                gym_hallway.SetPos(new Vector3(x * offset.x, 1.5f, -y * offset.y));
             }
             if (idx == 1)
             {
                 var cafe_hallway = GameObject.Find("Cafe_Hallway").GetComponent<RoomBehavior>();
-                cafe_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
+                cafe_hallway.SetPos(new Vector3(x * offset.x, 1.5f, -y * offset.y));
             }
             idx++;
         }
