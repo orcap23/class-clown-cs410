@@ -41,7 +41,7 @@ public class RoomBehavior : MonoBehaviour
         }
         if (RoomID == 1)
         {
-            tp_coords = new Vector3(-1, 1.3f, 57.8f);
+            tp_coords = new Vector3(-6f, 1.3f, 52f);
             tp_rot = new Vector3(0, 270, 0);
             setRot = true;
         }

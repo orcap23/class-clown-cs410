@@ -41,7 +41,7 @@ public class MazeGenerator : MonoBehaviour
             for (int j = 0; j < size.y; j++)
             {
                 Cell current = board[i, j];
-                if (current.visited)
+                if (current.visited &&  !(i == size.x-1 && j == size.y-1))
                 {
                     visited.Add(current);
                     var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
@@ -67,12 +67,12 @@ public class MazeGenerator : MonoBehaviour
             if (idx == 0)
             {
                 var gym_hallway = GameObject.Find("Gym_Hallway").GetComponent<RoomBehavior>();
-                gym_hallway.SetPos(new Vector3(x * offset.x, 1.5f, -y * offset.y));
+                gym_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
             }
             if (idx == 1)
             {
                 var cafe_hallway = GameObject.Find("Cafe_Hallway").GetComponent<RoomBehavior>();
-                cafe_hallway.SetPos(new Vector3(x * offset.x, 1.5f, -y * offset.y));
+                cafe_hallway.SetPos(new Vector3(x * offset.x, 1.3f, -y * offset.y));
             }
             idx++;
         }

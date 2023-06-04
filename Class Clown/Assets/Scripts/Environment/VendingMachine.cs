@@ -6,7 +6,7 @@ public class VendingMachine : MonoBehaviour
 {
     public int numPlayerInteractions = 0;
     public Animator mAnimator;
-
+    public PrankList list;
     void Start()
     {
         mAnimator = GetComponent<Animator>();
@@ -19,16 +19,28 @@ public class VendingMachine : MonoBehaviour
             if (numPlayerInteractions < 4)
             {
                 mAnimator.SetTrigger("T1");
+                numPlayerInteractions++;
             }
             else if (numPlayerInteractions == 4)
             {
                 mAnimator.SetTrigger("T2");
+                CheckOffPrank();
             }
-            numPlayerInteractions++;
         }
         else{
             Debug.Log("mAnimator is null");
         }
         
+    }
+    public void CheckOffPrank()
+    {
+        for (int i = 0;  i<list.PrankText.Length; i++)
+        {
+            if (list.PrankText[i].text == "Knock over the cafeteria vending machine >:)" && list.PrankText[i].color != Color.green)
+            {
+                list.PrankText[i].color = Color.green;
+                list.pranksdone++;
+            }
+        }
     }
 }

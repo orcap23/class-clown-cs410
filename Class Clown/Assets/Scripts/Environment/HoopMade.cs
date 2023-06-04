@@ -18,7 +18,12 @@ public class HoopMade : MonoBehaviour
                     list.PrankText[i].color = Color.green;
                     list.pranksdone++;
                 }
-                if (list.PrankText[i].text == "Make a hoop" && list.PrankText[i].color != Color.green)
+                else if (list.PrankText[i].text == "Make a hoop" && list.PrankText[i].color != Color.green)
+                {
+                    list.PrankText[i].color = Color.green;
+                    list.pranksdone++;
+                }
+                else if (list.PrankText[i].text == "Make a hoop in the gym!" && list.PrankText[i].color != Color.green)
                 {
                     list.PrankText[i].color = Color.green;
                     list.pranksdone++;

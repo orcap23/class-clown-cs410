@@ -117,6 +117,11 @@ public class Interact : MonoBehaviour
                         {
                             vendingmachine.PlayAnimation();
                         }
+                        else if(highlight.TryGetComponent(out FireAlarm2 EndFireAlarm))
+                        {
+                            Debug.Log("FireAlarm2");
+                            EndFireAlarm.FinalExit();
+                        }
 
                     }
                 }
