@@ -2625,6 +2625,18 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 3267208426254456382}
+    - target: {fileID: 1271571964209111174, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: CameraRadius
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271571964209111174, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: DampingFromCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271571964209111174, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
+      propertyPath: DampingIntoCollision
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8158352698082146921, guid: b4cc9d6c6d128a146a7f298d63a9f0ed, type: 3}
       propertyPath: m_RootOrder
       value: 0

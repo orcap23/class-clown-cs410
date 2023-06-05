@@ -6,7 +6,7 @@ public class TurningMrSmith : MonoBehaviour
 {
     // Start is called before the first frame update
     public Turn spinningSmith;
-    public Detection smithsight;
+    public Detection smithSight;
     public PrankList list;
     public NavMeshAgent smith;
     public GameObject Player;
@@ -14,11 +14,11 @@ public class TurningMrSmith : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(smithsight.awareness >= 10 && playerinter.GetHeld!=null)
+        if(smithSight.awareness >= 10 && playerinter.GetHeld!=null)
         {
             spinningSmith.fallen = true;
             smith.SetDestination(Player.transform.position);
-            smith.updateRotation = false;
+            smith.updateRotation = true;
         }
         if (spinningSmith.fallen)
         {
@@ -34,9 +34,23 @@ public class TurningMrSmith : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && smithsight.awareness >=10)
+        if (other.CompareTag("Player") && smithSight.awareness >=10)
         {
+            //pick up the player and drag him back to spawn
             Debug.Log("You've been caught");
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.TryGetComponent(out PickUP throwable))
+        {
+            if(collision.gameObject.TryGetComponent(out Rigidbody rb))
+            {
+                if(rb.velocity.x != 0 || rb.velocity.y != 0 || rb.velocity.z != 0)
+                {
+                    
+                }
+            }
         }
     }
 }
