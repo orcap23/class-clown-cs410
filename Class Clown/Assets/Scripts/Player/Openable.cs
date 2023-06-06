@@ -6,7 +6,8 @@ public class Openable : MonoBehaviour
 {
     [SerializeField] private bool isopen = false;
     public Vector3 targetangle;
-    private Vector3 startangle;
+    public Vector3 startangle;
+    public int openangle = 90;
     // funny mutex lock but not really
     private bool opening = false;
     public bool locked = false;
@@ -18,7 +19,7 @@ public class Openable : MonoBehaviour
             targetangle = startangle;
             if (!isopen)
             {
-                targetangle.y = startangle.y + 90;
+                targetangle.y = startangle.y + openangle;
                 if (!opening)
                 {
                     StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));
@@ -28,7 +29,7 @@ public class Openable : MonoBehaviour
             }
             else
             {
-                targetangle.y = startangle.y - 90;
+                targetangle.y = startangle.y - openangle;
                 if (!opening)
                 {
                     StartCoroutine(LerpDoor(1f, startangle.y, targetangle.y));

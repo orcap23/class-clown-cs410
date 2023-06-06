@@ -30,7 +30,8 @@ public class VendingMachine : MonoBehaviour
         else{
             Debug.Log("mAnimator is null");
         }
-        
+
+
     }
     public void CheckOffPrank()
     {
@@ -42,5 +43,7 @@ public class VendingMachine : MonoBehaviour
                 list.pranksdone++;
             }
         }
+        gameObject.tag = "Untagged";
+        Destroy(this);
     }
 }

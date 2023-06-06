@@ -35,13 +35,13 @@ public class RoomBehavior : MonoBehaviour
         triggerDoors[active[Random.Range(0, active.Count)]].SetActive(true);
         if (RoomID == 0)
         {
-            tp_coords = new Vector3(30f, 1.3f, 34f);
+            tp_coords = GameObject.Find("gymScene").transform.position;
             tp_rot = new Vector3(0, 270, 0);
             setRot = true;
         }
         if (RoomID == 1)
         {
-            tp_coords = new Vector3(-6f, 1.3f, 52f);
+            tp_coords = GameObject.Find("cafeScene").transform.position;
             tp_rot = new Vector3(0, 270, 0);
             setRot = true;
         }
