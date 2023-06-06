@@ -24,14 +24,16 @@ public class Timer : MonoBehaviour
             timerTime -= Time.deltaTime;
             UpdateTimer(timerTime);
         }
-        yield return null;
+        UpdateTimer(0);
+        yield return wait;
     }
 
     private void UpdateTimer(float time)
     {
         int minute = Mathf.FloorToInt(time / 60);
         int seconds = Mathf.FloorToInt(time % 60);
-        if(time < (timerDuration / 2) && seconds % 2 == 0)
+
+        if(time < (timerDuration / 4) && seconds % 2 == 0)
         {
             timer.color = flashing;
         }
@@ -39,6 +41,7 @@ public class Timer : MonoBehaviour
         {
             timer.color = Color.black;
         }
+
         timer.text = "Time: ";
         if(minute % 10 == minute)
         {
