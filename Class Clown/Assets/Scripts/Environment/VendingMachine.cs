@@ -19,13 +19,13 @@ public class VendingMachine : MonoBehaviour
             if (numPlayerInteractions < 4)
             {
                 mAnimator.SetTrigger("T1");
-                numPlayerInteractions++;
             }
             else if (numPlayerInteractions == 4)
             {
                 mAnimator.SetTrigger("T2");
                 CheckOffPrank();
             }
+            numPlayerInteractions++;
         }
         else{
             Debug.Log("mAnimator is null");
@@ -44,6 +44,5 @@ public class VendingMachine : MonoBehaviour
             }
         }
         gameObject.tag = "Untagged";
-        Destroy(this);
     }
 }
