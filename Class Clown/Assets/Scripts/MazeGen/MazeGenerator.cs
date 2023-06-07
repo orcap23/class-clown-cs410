@@ -41,7 +41,6 @@ public class MazeGenerator : MonoBehaviour
             for (int j = 0; j < size.y; j++)
             {
                 Cell current = board[i, j];
-                Debug.Log(Hallway.Length);
                 int hallwayindex = Random.Range(0, Hallway.Length);
 
                 if (current.visited &&  !(i == size.x-1 && j == size.y-1))
