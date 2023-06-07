@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7589191590439434017}
   - component: {fileID: 7589191590439434018}
   m_Layer: 0
-  m_Name: Hallway Lockers with Children
+  m_Name: Empty Hallway
   m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

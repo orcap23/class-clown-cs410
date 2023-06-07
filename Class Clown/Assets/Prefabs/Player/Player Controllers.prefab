@@ -2629,6 +2629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7293f529f4440e4a91e69912f13f753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerDuration: 180
+  timerTime: 0
+  timer: {fileID: 0}
+  flashing: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2893325948639649337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,6 +3059,22 @@ PrefabInstance:
     - target: {fileID: 4898849681778513805, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333553508900987267, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 51657
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333553508900987267, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.39215684
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333553508900987267, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.9912785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333553508900987267, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5581192296093328612, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
       propertyPath: m_RootOrder

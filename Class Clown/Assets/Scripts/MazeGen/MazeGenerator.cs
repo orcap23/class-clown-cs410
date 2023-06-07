@@ -8,7 +8,7 @@ public class MazeGenerator : MonoBehaviour
     public Vector2Int size;
     public Vector2Int startpos;
     Cell[,] board;
-    public GameObject Hallway;
+    public GameObject [] Hallway;
     public GameObject TriggerRoom;
     public GameObject StartRoom;
     public GameObject EndRoom;
@@ -41,10 +41,14 @@ public class MazeGenerator : MonoBehaviour
             for (int j = 0; j < size.y; j++)
             {
                 Cell current = board[i, j];
+                Debug.Log(Hallway.Length);
+                int hallwayindex = Random.Range(0, Hallway.Length);
+
                 if (current.visited &&  !(i == size.x-1 && j == size.y-1))
                 {
                     visited.Add(current);
-                    var newHallway = Instantiate(Hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+                    GameObject hallway = Hallway[hallwayindex];
+                    var newHallway = Instantiate(hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
                     newHallway.UpdateRoom(current.walls);
                     newHallway.name += " " + i + "-" + j;
                 }
