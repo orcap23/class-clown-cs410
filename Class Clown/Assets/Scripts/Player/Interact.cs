@@ -122,6 +122,11 @@ public class Interact : MonoBehaviour
                             Debug.Log("FireAlarm2");
                             EndFireAlarm.FinalExit();
                         }
+                        else if (highlight.TryGetComponent(out BasketballButton button))
+                        {
+                            Debug.Log("Pressed Button");
+                            button.Press();
+                        }
 
                     }
                 }
