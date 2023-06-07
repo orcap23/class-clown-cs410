@@ -6,6 +6,7 @@ public class BasketballButton : MonoBehaviour
 {
     public Animator mAnimator;
     public GameObject basketball;
+    public PrankList list;
     public GameObject kid;
     private int nPresses = 0;
 
@@ -24,7 +25,16 @@ public class BasketballButton : MonoBehaviour
             float roll = Random.value;
             if (roll <= .8f)
             {
-                Instantiate(basketball, new Vector3(Random.Range(65f, 105f), 5f, Random.Range(70f,105f)), Quaternion.identity);
+                var newball = Instantiate(basketball, new Vector3(Random.Range(65f, 105f), 5f, Random.Range(70f,105f)), Quaternion.identity);
+                newball.TryGetComponent(out DeflateBall deflatescript);
+                if (deflatescript != null)
+                {
+                    deflatescript.list = list;
+                }
+                else{
+                    Debug.Log("null deflatescript");
+                }
+                
             }
             else
             {
