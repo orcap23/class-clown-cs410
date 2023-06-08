@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26991585, g: 0.5483446, b: 0.85197645, a: 1}
+  m_IndirectSpecularColor: {r: 0.2699183, g: 0.54832274, b: 0.85198027, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2251,6 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list: {fileID: 1726095328}
   mAnimator: {fileID: 0}
+  pop: {fileID: 8300000, guid: f2c20abd0a21f41f6a6827e0dc7766f8, type: 3}
 --- !u!90 &706345378
 Avatar:
   m_ObjectHideFlags: 0
@@ -3212,6 +3213,10 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 1726095328}
+    - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
+      propertyPath: swish
+      value: 
+      objectReference: {fileID: 8300000, guid: ff3883009f5a9424eb76b7b6951d9dcb, type: 3}
     - target: {fileID: 8097433438907823728, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Size.y
       value: 0.003874053
@@ -6725,6 +6730,10 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 1726095328}
+    - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
+      propertyPath: swish
+      value: 
+      objectReference: {fileID: 8300000, guid: ff3883009f5a9424eb76b7b6951d9dcb, type: 3}
     - target: {fileID: 8097433438907823728, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Size.y
       value: 0.003874053
@@ -6887,6 +6896,10 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 1726095328}
+    - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
+      propertyPath: swish
+      value: 
+      objectReference: {fileID: 8300000, guid: ff3883009f5a9424eb76b7b6951d9dcb, type: 3}
     - target: {fileID: 8097433438907823728, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Size.y
       value: 0.003874053
@@ -17702,6 +17715,10 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 1726095328}
+    - target: {fileID: 4754246309542874685, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
+      propertyPath: swish
+      value: 
+      objectReference: {fileID: 8300000, guid: ff3883009f5a9424eb76b7b6951d9dcb, type: 3}
     - target: {fileID: 8097433438907823728, guid: a6e72d089495c964fb650987d4a971e7, type: 3}
       propertyPath: m_Size.y
       value: 0.003874053
