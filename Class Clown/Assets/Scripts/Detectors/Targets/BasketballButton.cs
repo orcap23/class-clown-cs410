@@ -27,6 +27,7 @@ public class BasketballButton : MonoBehaviour
             {
                 var newball = Instantiate(basketball, new Vector3(Random.Range(65f, 105f), 5f, Random.Range(70f,105f)), Quaternion.identity);
                 newball.TryGetComponent(out DeflateBall deflatescript);
+                newball.name = "Basketball";
                 if (deflatescript != null)
                 {
                     deflatescript.list = list;

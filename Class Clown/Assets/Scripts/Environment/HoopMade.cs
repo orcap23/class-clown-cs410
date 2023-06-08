@@ -6,15 +6,14 @@ public class HoopMade : MonoBehaviour
 {
     public PrankList list;
     public AudioClip swish;
-    AudioSource source; 
+    public AudioSource source; 
     private void OnTriggerEnter(Collider other)
     {
         
         if (other.name == "Basketball")
         {
             // logic to check if it was made from half court or farther
-            source = GetComponent<AudioSource>();
-            source.PlayOneShot(swish, 0.5f);
+            source.PlayOneShot(source.clip, 0.5f);
             Debug.Log("Hoop made");
             for (int i = 0;  i<list.PrankText.Length; i++)
             {
