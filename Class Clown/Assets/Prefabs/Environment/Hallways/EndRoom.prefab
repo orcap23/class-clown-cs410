@@ -15,7 +15,7 @@ GameObject:
   m_Name: window01_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4551614049421985889
@@ -102,7 +102,7 @@ GameObject:
   m_Name: wall01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4406043367881014652
@@ -199,7 +199,7 @@ GameObject:
   m_Name: glass_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5139262562264805626
@@ -280,7 +280,7 @@ GameObject:
   m_Name: window_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6479041085340767513
@@ -319,7 +319,7 @@ GameObject:
   m_Name: glass_02 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8642353302922134515
@@ -402,7 +402,7 @@ GameObject:
   m_Name: glass_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3795109163752728821
@@ -485,7 +485,7 @@ GameObject:
   m_Name: key3 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6741337639819138855
@@ -569,8 +569,8 @@ GameObject:
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8986558810872014357
 Transform:
@@ -666,8 +666,8 @@ GameObject:
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1983979572921002259
 Transform:
@@ -762,8 +762,8 @@ GameObject:
   m_Name: NE Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3469927573408778199
 Transform:
@@ -846,8 +846,8 @@ GameObject:
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6621968322221982757
 Transform:
@@ -940,7 +940,7 @@ GameObject:
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6160148100854211748
@@ -973,7 +973,7 @@ GameObject:
   m_Name: window01_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8190295726952945803
@@ -1058,8 +1058,8 @@ GameObject:
   m_Name: SE Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1157055186353257799
 Transform:
@@ -1141,7 +1141,7 @@ GameObject:
   m_Name: window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6329909337047897626
@@ -1224,7 +1224,7 @@ GameObject:
   m_Name: glass_01 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3003262828186797727
@@ -1305,7 +1305,7 @@ GameObject:
   m_Name: South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6822523264887904600
@@ -1339,7 +1339,7 @@ GameObject:
   m_Name: door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3647515587404282507
@@ -1379,7 +1379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8460852019817349373
 Transform:
@@ -1474,7 +1474,7 @@ GameObject:
   m_Name: glass_01 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7051707395866259421
@@ -1557,7 +1557,7 @@ GameObject:
   m_Name: window01_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4855762001068115282
@@ -1643,7 +1643,7 @@ GameObject:
   m_Name: glass_02 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6044219602536574216
@@ -1727,7 +1727,7 @@ GameObject:
   m_Name: door01_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2645294882087156931
@@ -1827,8 +1827,8 @@ GameObject:
   m_Name: SW  Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3453713001371992561
 Transform:
@@ -1910,7 +1910,7 @@ GameObject:
   m_Name: door01_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6553965469427428839
@@ -2205,7 +2205,7 @@ GameObject:
   m_Name: glass_01 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8747334463635092280
@@ -2288,7 +2288,7 @@ GameObject:
   m_Name: window02_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4266630205916072309
@@ -2373,7 +2373,7 @@ GameObject:
   m_Name: glass_02 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &778873457271558176
@@ -2456,7 +2456,7 @@ GameObject:
   m_Name: glass_02 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &879268460619509355
@@ -2539,7 +2539,7 @@ GameObject:
   m_Name: glass_02 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5729849949826769482
@@ -2622,7 +2622,7 @@ GameObject:
   m_Name: glass_01 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4634795993122933730
@@ -2705,7 +2705,7 @@ GameObject:
   m_Name: key3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4664316423912478364
@@ -2786,7 +2786,7 @@ GameObject:
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2610688413965259885
@@ -2803,7 +2803,7 @@ Transform:
   m_Children:
   - {fileID: 6822523264887904600}
   m_Father: {fileID: 9006418656404578836}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6803054026194093252
 GameObject:
@@ -2820,8 +2820,8 @@ GameObject:
   m_Name: NW Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &452148724775014317
 Transform:
@@ -2903,7 +2903,7 @@ GameObject:
   m_Name: door_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &604074353542982409
@@ -2986,7 +2986,7 @@ GameObject:
   m_Name: key1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2517206062258970898
@@ -3069,7 +3069,7 @@ GameObject:
   m_Name: glass_01 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1237659874029883260
@@ -3152,7 +3152,7 @@ GameObject:
   m_Name: glass_01 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8767748663114603900
@@ -3233,7 +3233,7 @@ GameObject:
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9006418655669429043
@@ -3253,7 +3253,7 @@ Transform:
   - {fileID: 452148724775014317}
   - {fileID: 3469927573408778199}
   m_Father: {fileID: 9006418656404578836}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9006418656404578837
 GameObject:
@@ -3287,9 +3287,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9006418657170711194}
-  - {fileID: 9006418657196949807}
   - {fileID: 9006418655669429043}
   - {fileID: 2610688413965259885}
+  - {fileID: 9006418657196949807}
   - {fileID: 6220644849154738813}
   - {fileID: 4023090755407626276}
   m_Father: {fileID: 0}
@@ -3344,6 +3344,11 @@ MonoBehaviour:
   pause: {fileID: 0}
   EndingUI: {fileID: 0}
   player: {fileID: 0}
+  scoretext: {fileID: 0}
+  speed: {fileID: 0}
+  timesdetected: {fileID: 0}
+  pranknum: {fileID: 0}
+  scorescript: {fileID: 0}
   ending: 0
 --- !u!1 &9006418657170711195
 GameObject:
@@ -3409,7 +3414,7 @@ Transform:
   m_Children:
   - {fileID: 8460852019817349373}
   m_Father: {fileID: 9006418656404578836}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9094034894641754799
 GameObject:
@@ -3426,7 +3431,7 @@ GameObject:
   m_Name: window01_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8819334933685736902
@@ -3511,7 +3516,7 @@ GameObject:
   m_Name: window02_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6922532086203813289
@@ -3597,7 +3602,7 @@ GameObject:
   m_Name: glass_02 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2075755353668093029
@@ -3782,9 +3787,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3102349763714791274, guid: 463aa706b0f7eb441b2bd92e19e29188, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3191783862689067357, guid: 463aa706b0f7eb441b2bd92e19e29188, type: 3}
       propertyPath: m_Name
       value: door01_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191783862689067357, guid: 463aa706b0f7eb441b2bd92e19e29188, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577227832018416787, guid: 463aa706b0f7eb441b2bd92e19e29188, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 463aa706b0f7eb441b2bd92e19e29188, type: 3}

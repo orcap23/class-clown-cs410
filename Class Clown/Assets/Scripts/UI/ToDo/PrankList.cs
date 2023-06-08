@@ -12,6 +12,7 @@ public class PrankList : MonoBehaviour
     public int pranksdone = 0;
     void Start()
     {
+        pranksdone = 0;
         char[] delims = new[] { '\r', '\n' };
         string allescapes = escapefile.text;
         string allpranks = pranksfile.text;
