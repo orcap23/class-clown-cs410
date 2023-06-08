@@ -6,6 +6,7 @@ public class UnlockEscape : MonoBehaviour
 {
     // Start is called before the first frame update
     public PrankList list;
+    public GameObject AlarmMessage;
     public bool pranksaredone = false;
     private static bool Escapable = false;
     public static bool GetEscape
@@ -21,6 +22,8 @@ public class UnlockEscape : MonoBehaviour
     {
         if (pranksaredone)
         {
+            AlarmMessage.TryGetComponent(out AlarmMessage msg);
+            msg.DisplayMessage();
             pranksaredone = false;
             Escapable = true;
         }

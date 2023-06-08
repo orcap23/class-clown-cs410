@@ -34,7 +34,7 @@ public class AlarmMessage : MonoBehaviour
             message.enabled = false;
             parentImage.enabled = false;
             yield return new WaitForSeconds(1);
-            Debug.Log($"loop {i}");
         }
+        Destroy(this);
     }
 }
