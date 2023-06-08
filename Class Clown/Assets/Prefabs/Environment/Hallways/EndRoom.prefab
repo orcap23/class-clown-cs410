@@ -3167,6 +3167,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9006418656404578836}
   - component: {fileID: 9006418656404578839}
+  - component: {fileID: 5607942467461151497}
+  - component: {fileID: 1830374543644439432}
   m_Layer: 0
   m_Name: EndRoom
   m_TagString: DontDestroy
@@ -3216,6 +3218,35 @@ MonoBehaviour:
   tp_coords: {x: 0, y: 0, z: 0}
   setRot: 0
   tp_rot: {x: 0, y: 0, z: 0}
+--- !u!65 &5607942467461151497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006418656404578837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.077916, y: 1, z: 5.4660983}
+  m_Center: {x: 0.019652843, y: 0, z: -9.033464}
+--- !u!114 &1830374543644439432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006418656404578837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6180d99a88d4dbf45ad48e68aed4ac96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 0}
+  EndingUI: {fileID: 0}
+  player: {fileID: 0}
+  ending: 0
 --- !u!1 &9006418657170711195
 GameObject:
   m_ObjectHideFlags: 0
