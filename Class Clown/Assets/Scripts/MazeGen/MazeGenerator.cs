@@ -28,29 +28,34 @@ public class MazeGenerator : MonoBehaviour
         public bool[] walls = new bool[4];
         public bool visited;
         public Vector2Int pos;
+        public GameObject roomObject;
     }
 
     void GenerateSchool()
     {
         List<Cell> visited = new List<Cell>();
 
-
         // Generate rooms using maze data structure
         for (int i = 0; i < size.x; i++)
         {
             for (int j = 0; j < size.y; j++)
             {
+                if ((i == 0 && j == 0) || (i == size.x-1 && j == size.y-1))
+                {
+                    continue;
+                }
                 Cell current = board[i, j];
-                Debug.Log(Hallway.Length);
+                //Debug.Log(Hallway.Length);
                 int hallwayindex = Random.Range(0, Hallway.Length);
-
-                if (current.visited &&  !(i == size.x-1 && j == size.y-1))
+            
+                if (current.visited)
                 {
                     visited.Add(current);
                     GameObject hallway = Hallway[hallwayindex];
                     var newHallway = Instantiate(hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
                     newHallway.UpdateRoom(current.walls);
                     newHallway.name += " " + i + "-" + j;
+                    current.roomObject = newHallway.gameObject;
                 }
 
             }
@@ -58,14 +63,18 @@ public class MazeGenerator : MonoBehaviour
 
         // Generate event-rooms
         EventRooms = new List<Cell>();
-        EventRooms.Add(visited[(int)Floor(.2 * visited.Count - 1)]);
+        int idx1 = (int)Floor(.2 * visited.Count - 1);
+        int idx2 = (int)Floor(.8 * visited.Count - 1);
+        EventRooms.Add(visited[idx1]);
         //EventRooms.Add(visited[(int)Floor(.5 * visited.Count - 1)]);
-        EventRooms.Add(visited[(int)Floor(.8 * visited.Count - 1)]);
+        EventRooms.Add(visited[idx2]);
+
         int idx = 0;
         foreach (Cell room in EventRooms)
         {
             int x = room.pos.x;
             int y = room.pos.y;
+            Destroy(room.roomObject);
             var instEvent = Instantiate(TriggerRoom, new Vector3(x * offset.x, 0, -y * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
             instEvent.UpdateEventRoom(room.walls, idx);
             if (idx == 0)
