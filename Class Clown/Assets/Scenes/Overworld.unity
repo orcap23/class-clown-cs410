@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3893308690418590750, guid: 76aeb23ac96028c4fa68bebff8bd61c5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4224929831455001562, guid: 76aeb23ac96028c4fa68bebff8bd61c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6091,6 +6095,10 @@ PrefabInstance:
     - target: {fileID: 4328843868415524670, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: pranksaredone
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469748167162358746, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5531368373186863387, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: timer
