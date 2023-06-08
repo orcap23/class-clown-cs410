@@ -22,10 +22,14 @@ public class UnlockEscape : MonoBehaviour
     {
         if (pranksaredone)
         {
-            AlarmMessage.TryGetComponent(out AlarmMessage msg);
-            msg.DisplayMessage();
+            
             pranksaredone = false;
             Escapable = true;
+        }
+        if (list.pranksdone == list.PrankText.Length)
+        {
+            AlarmMessage.TryGetComponent(out AlarmMessage msg);
+            msg.DisplayMessage();
         }
     }
     private IEnumerator CheckifEscapeable()

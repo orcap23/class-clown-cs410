@@ -26,14 +26,14 @@ public class AlarmMessage : MonoBehaviour
 
     private IEnumerator blinkDisplay()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             message.enabled = true;
             parentImage.enabled = true;
             yield return new WaitForSeconds(2);
             message.enabled = false;
             parentImage.enabled = false;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
         }
         Destroy(this);
     }
