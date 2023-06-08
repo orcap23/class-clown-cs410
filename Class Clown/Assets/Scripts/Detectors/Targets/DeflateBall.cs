@@ -8,10 +8,13 @@ public class DeflateBall : MonoBehaviour
 {
     public PrankList list;
     public Animator mAnimator;
+    public AudioClip pop;
+    AudioSource source;
 
     void Start()
     {
         mAnimator = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -19,6 +22,7 @@ public class DeflateBall : MonoBehaviour
         if (other.gameObject.name == "spike")
         {
             mAnimator.SetTrigger("T1");
+            source.PlayOneShot(pop, 2.0f);
 
             for (int i = 0; i < list.PrankText.Length; i++)
                 {
