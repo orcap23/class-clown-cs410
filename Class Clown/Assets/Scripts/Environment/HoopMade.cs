@@ -5,8 +5,13 @@ using UnityEngine;
 public class HoopMade : MonoBehaviour
 {
     public PrankList list;
-    public AudioClip swish;
-    public AudioSource source; 
+    public AudioSource source;
+    public AudioSource swish;
+
+    void Start(){
+        source = GameObject.Find("swish").GetComponent<AudioSource>();
+        swish = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         
