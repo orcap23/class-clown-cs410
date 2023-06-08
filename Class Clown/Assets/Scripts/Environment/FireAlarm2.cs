@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class FireAlarm2 : MonoBehaviour
 {
+    public AudioSource mAudioSource;
     public GameObject EndDoor;
     private bool isOpen;
+
+    void start()
+    {
+        mAudioSource = GetComponent<AudioSource>();
+    }
     public void FinalExit()
     {
         GameObject manager = GameObject.Find("Managers");
@@ -18,6 +24,7 @@ public class FireAlarm2 : MonoBehaviour
             if (EndDoor.TryGetComponent(out Animator doorL))
             {
                 doorL.SetTrigger("T1");
+                mAudioSource.Play();
                 isOpen = true;
                 //Debug.Log("Set Trigger");
             }
