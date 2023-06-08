@@ -1,7 +1,4 @@
-using System.Collections;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 public class PrankList : MonoBehaviour
@@ -20,21 +17,19 @@ public class PrankList : MonoBehaviour
         string allpranks = pranksfile.text;
         pranks = allpranks.Split(delims,System.StringSplitOptions.RemoveEmptyEntries);
         escapes = allescapes.Split(delims, System.StringSplitOptions.RemoveEmptyEntries);
-
+        Debug.Log(pranks[0]);
         int numpranks = pranks.Length;
-        Debug.Log(numpranks);
-        Debug.Log(PrankText.Length);
         if (numpranks > PrankText.Length)
         {
-            int[] used = new int[PrankText.Length];
+            string[] used = new string[PrankText.Length];
             for (int i = 0; i < PrankText.Length; i++)
             {
-                int index = Random.Range(0, numpranks);
-                while (used.Contains<int>(index))
+                int index = 0;
+                while (Array.Exists(used, element => element == pranks[index]))
                 {
-                    index = Random.Range(0, numpranks);
+                    index = UnityEngine.Random.Range(0, numpranks);
                 }
-                used[i] = index;
+                used[i] = pranks[index];
                 PrankText[i].text = pranks[index];
                 PrankText[i].color = Color.black;
             }
