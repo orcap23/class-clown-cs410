@@ -9,6 +9,7 @@ public class AlarmMessage : MonoBehaviour
     private TMP_Text message;
     public GameObject parent;
     private Image parentImage;
+    private AudioSource mAudioSource;
     private bool started = false;
     // Start is called before the first frame update
 
@@ -16,6 +17,7 @@ public class AlarmMessage : MonoBehaviour
     {
         message = GetComponent<TMP_Text>();
         parentImage = parent.GetComponent<Image>();
+        mAudioSource = GetComponent<AudioSource>();
         message.enabled = false;
         parentImage.enabled = false;
     }
@@ -35,6 +37,7 @@ public class AlarmMessage : MonoBehaviour
         {
             message.enabled = true;
             parentImage.enabled = true;
+            mAudioSource.Play();
             yield return new WaitForSeconds(.5f);
             message.enabled = false;
             parentImage.enabled = false;

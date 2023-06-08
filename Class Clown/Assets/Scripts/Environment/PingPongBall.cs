@@ -7,6 +7,12 @@ public class PingPongBall : MonoBehaviour
     // Start is called before the first frame update
     public PrankList list;
     public Interact player;
+    public AudioSource source;
+
+    void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,5 +30,10 @@ public class PingPongBall : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        source.Play();
     }
 }

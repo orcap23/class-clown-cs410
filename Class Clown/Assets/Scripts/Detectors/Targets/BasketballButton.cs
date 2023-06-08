@@ -8,18 +8,21 @@ public class BasketballButton : MonoBehaviour
     public GameObject basketball;
     public PrankList list;
     public GameObject kid;
+    private AudioSource mAudioSource;
     private int nPresses = 0;
 
     void Start()
     {
         
         mAnimator = GetComponent<Animator>();
+        mAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     public void Press()
     {
         mAnimator.SetTrigger("T1");
+        mAudioSource.Play();
         if (nPresses < 20)
         {
             float roll = Random.value;

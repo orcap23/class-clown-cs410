@@ -7,6 +7,7 @@ public class VendingMachine : MonoBehaviour
     public int numPlayerInteractions = 0;
     public Animator mAnimator;
     public PrankList list;
+    public AudioSource [] sources;
     void Start()
     {
         mAnimator = GetComponent<Animator>();
@@ -19,10 +20,14 @@ public class VendingMachine : MonoBehaviour
             if (numPlayerInteractions < 4)
             {
                 mAnimator.SetTrigger("T1");
+                sources[0].Play();
             }
             else if (numPlayerInteractions == 4)
             {
                 mAnimator.SetTrigger("T2");
+                sources[0].Play();
+                sources[0].Play();
+                sources[1].Play();
                 CheckOffPrank();
             }
             numPlayerInteractions++;

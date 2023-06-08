@@ -9,11 +9,13 @@ public class DeflateBall : MonoBehaviour
     public PrankList list;
     public Animator mAnimator;
     public AudioSource source;
+    public AudioSource bounce;
 
     void Start()
     {
         mAnimator = GetComponent<Animator>();
         source = GameObject.Find("pop").GetComponent<AudioSource>();
+        bounce = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -31,6 +33,10 @@ public class DeflateBall : MonoBehaviour
                         list.pranksdone++;
                     }
                 }
+        }
+        else
+        {
+            bounce.Play();
         }
     }
 }
