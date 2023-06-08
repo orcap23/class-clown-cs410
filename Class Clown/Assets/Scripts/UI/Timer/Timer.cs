@@ -5,7 +5,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public float timerDuration = 3 * 60f;
-    public float timerTime;
+    public static float timerTime;
     public TMP_Text timer;
     public Color flashing;
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class Timer : MonoBehaviour
             timerTime -= Time.deltaTime;
             UpdateTimer(timerTime);
         }
+        timerTime = 0;
         UpdateTimer(0);
         yield return wait;
     }
