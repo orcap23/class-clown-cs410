@@ -9,6 +9,7 @@ public class AlarmMessage : MonoBehaviour
     private TMP_Text message;
     public GameObject parent;
     private Image parentImage;
+    private bool started = false;
     // Start is called before the first frame update
 
     void Start()
@@ -19,21 +20,25 @@ public class AlarmMessage : MonoBehaviour
         parentImage.enabled = false;
     }
 
-    public void DisplayMessage()
-    {  
-        StartCoroutine(blinkDisplay());
+    private void Update()
+    {
+        if(UnlockEscape.alarmFlash && !started)
+        {
+            started = true;
+            StartCoroutine(blinkDisplay());
+        }
     }
 
     private IEnumerator blinkDisplay()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 7; i++)
         {
             message.enabled = true;
             parentImage.enabled = true;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(.5f);
             message.enabled = false;
             parentImage.enabled = false;
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.25f);
         }
         Destroy(this);
     }

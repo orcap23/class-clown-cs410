@@ -9,6 +9,7 @@ public class UnlockEscape : MonoBehaviour
     public GameObject AlarmMessage;
     public bool pranksaredone = false;
     private static bool Escapable = false;
+    public static bool alarmFlash = false;
     public static bool GetEscape
     {
         get { return Escapable;}
@@ -16,6 +17,7 @@ public class UnlockEscape : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        AlarmMessage.TryGetComponent(out AlarmMessage msg);
         StartCoroutine(CheckifEscapeable());
     }
     private void Update()
@@ -26,10 +28,9 @@ public class UnlockEscape : MonoBehaviour
             pranksaredone = false;
             Escapable = true;
         }
-        if (list.pranksdone == list.PrankText.Length)
+        if (list.pranksdone == list.PrankText.Length && alarmFlash == false)
         {
-            AlarmMessage.TryGetComponent(out AlarmMessage msg);
-            msg.DisplayMessage();
+            alarmFlash = true;
         }
     }
     private IEnumerator CheckifEscapeable()
