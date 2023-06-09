@@ -13,6 +13,10 @@ public class DefaultSound : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        src.Play();
+        if (src != null)
+        {
+            src.Play();
+        }
+        
     }
 }
