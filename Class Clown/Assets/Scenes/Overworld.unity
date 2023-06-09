@@ -6466,8 +6466,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: e69b60d796be24dff8e83683c6245e61, type: 3}
     - target: {fileID: 3267208426766671746, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+      propertyPath: FootstepAudioVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267208426766671746, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 385
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267208426766671746, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
+      propertyPath: FootstepAudioClips.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3267208426766671746, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: FootstepAudioClips.Array.data[0]
