@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2699183, g: 0.54832274, b: 0.85198027, a: 1}
+  m_IndirectSpecularColor: {r: 0.269751, g: 0.5482996, b: 0.85198385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7035,7 +7035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3267208426766671757, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: pickupable.m_Bits
-      value: 513
+      value: 769
       objectReference: {fileID: 0}
     - target: {fileID: 3596708656354394735, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20524,6 +20524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 7, y: 10}
   startpos: {x: 0, y: 0}
+  snitches:
+  - {fileID: 6181433895425795818, guid: 081deb182fb1fea4ebb0d7687d791b4d, type: 3}
   Hallway:
   - {fileID: 7589191590439434016, guid: 8be0e72ef8cd1ae489da6ef844609930, type: 3}
   - {fileID: 1401507622883438328, guid: 83a476a84c2a12a44ab17a0aec88284b, type: 3}

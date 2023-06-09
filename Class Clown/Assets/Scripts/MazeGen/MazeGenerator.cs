@@ -10,6 +10,7 @@ namespace Unity.AI.Navigation
         public Vector2Int size;
         public Vector2Int startpos;
         Cell[,] board;
+        public GameObject[] snitches;
         public GameObject[] Hallway;
         public GameObject TriggerRoom;
         public GameObject StartRoom;
@@ -101,7 +102,14 @@ namespace Unity.AI.Navigation
             {
                 surfaces[i].BuildNavMesh();
             }
-
+            foreach(Cell room in visited)
+            {
+                if (room.roomObject.name.Contains("Snitch"))
+                {
+                    int snitchindex = Random.Range(0, snitches.Length);
+                    Instantiate(snitches[snitchindex], room.roomObject.transform.position, Quaternion.identity, room.roomObject.transform);
+                }
+            }
         }
 
         void GenerateMaze()
