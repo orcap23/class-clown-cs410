@@ -282,6 +282,7 @@ namespace Player
                 if(targetSpeed != 0)
                 {
                     _animator.SetBool("Walking", true);
+                    OnFootstep();
                     if(targetSpeed == CrouchMoveSpeed)
                     {
                         _animator.SetBool("Crouching", true);
@@ -321,16 +322,13 @@ namespace Player
                 GroundedRadius);
         }
 
-        private void OnFootstep(AnimationEvent animationEvent)
+        private void OnFootstep()
         {
-            if (animationEvent.animatorClipInfo.weight > 0.5f)
-            {
                 if (FootstepAudioClips.Length > 0)
                 {
-                    var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    //var index = Random.Range(0, FootstepAudioClips.Length);
+                    AudioSource.PlayClipAtPoint(FootstepAudioClips[0], transform.TransformPoint(_controller.center), FootstepAudioVolume);
                 }
-            }
         }
     }
 }
