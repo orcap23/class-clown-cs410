@@ -10,12 +10,14 @@ public class DeflateBall : MonoBehaviour
     public Animator mAnimator;
     public AudioSource source;
     public AudioSource bounce;
+    public Rigidbody rb;
 
     void Start()
     {
         mAnimator = GetComponent<Animator>();
         source = GameObject.Find("pop").GetComponent<AudioSource>();
         bounce = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -37,6 +39,7 @@ public class DeflateBall : MonoBehaviour
         else
         {
             bounce.Play();
+            rb.velocity *= .7f;
         }
     }
 }
