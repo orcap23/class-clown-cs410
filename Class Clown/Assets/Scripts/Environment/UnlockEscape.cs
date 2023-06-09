@@ -18,13 +18,14 @@ public class UnlockEscape : MonoBehaviour
     private void Start()
     {
         AlarmMessage.TryGetComponent(out AlarmMessage msg);
+        list.pranksdone = 0;
+        alarmFlash = false;
         StartCoroutine(CheckifEscapeable());
     }
     private void Update()
     {
         if (pranksaredone)
         {
-            
             pranksaredone = false;
             Escapable = true;
         }

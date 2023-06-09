@@ -11,6 +11,7 @@ public class Openable : MonoBehaviour
     // funny mutex lock but not really
     private bool opening = false;
     public bool locked = false;
+    public AlarmMessage lockedmessage;
     public void open()
     {
         if (!locked)
@@ -37,6 +38,10 @@ public class Openable : MonoBehaviour
                     isopen = false;
                 }
             }
+        }
+        else if(lockedmessage != null)
+        {
+            StartCoroutine(lockedmessage.GetBlinkDisplay());
         }
     }
     IEnumerator LerpDoor(float duration, float startyangle,float targetyangle)

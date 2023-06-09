@@ -7,10 +7,11 @@ public class Hamster : MonoBehaviour
     // Start is called before the first frame update
     public PrankList list;
     public Interact player;
+    private bool heldhamster = false;
     // Update is called once per frame
     void Update()
     {
-        if (player.GetHeld != null)
+        if (player.GetHeld != null && !heldhamster)
         {
             if (player.GetHeld.name == transform.name)
             {
@@ -20,6 +21,7 @@ public class Hamster : MonoBehaviour
                     {
                         list.PrankText[i].color = Color.green;
                         list.pranksdone++;
+                        heldhamster = true;
                     }
                 }
             }
