@@ -30,6 +30,7 @@ namespace Player
 
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
+        public AudioSource foot;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
@@ -295,6 +296,7 @@ namespace Player
                 else
                 {
                     _animator.SetBool("Walking", false);
+                    foot.loop = false;
                 }
 
             }
@@ -326,8 +328,10 @@ namespace Player
         {
                 if (FootstepAudioClips.Length > 0)
                 {
-                    //var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[0], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    if (!foot.isPlaying){
+                        foot.Play();
+                        foot.loop = true;
+                    }
                 }
         }
     }
