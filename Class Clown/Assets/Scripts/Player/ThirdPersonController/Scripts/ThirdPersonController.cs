@@ -224,6 +224,7 @@ namespace Player
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.crouch ? CrouchMoveSpeed : MoveSpeed;
+
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
             _controller.height = _input.crouch ? _crouchHeight : _standingHeight;
             _controller.center = _input.crouch ? _crouchCenter : _standingCenter;
@@ -283,8 +284,16 @@ namespace Player
                 if(targetSpeed != 0)
                 {
                     _animator.SetBool("Walking", true);
-                    OnFootstep();
-                    if(targetSpeed == CrouchMoveSpeed)
+                    if (!_input.crouch)
+                    {
+                        OnFootstep();
+                    }
+                    else
+                    {
+                        foot.loop = false;
+                    }
+
+                    if (targetSpeed == CrouchMoveSpeed)
                     {
                         _animator.SetBool("Crouching", true);
                     }

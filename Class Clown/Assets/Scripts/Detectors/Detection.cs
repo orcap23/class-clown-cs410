@@ -9,6 +9,9 @@ public class Detection : MonoBehaviour
     // https://github.com/Comp3interactive/FieldOfView
     // and edited to draw fov cone
     public Renderer Detector;
+    public Renderer awarenessgauge;
+    public Color start;
+    public Color end;
     public int MatNum;
     public Material detected;
     public Material fovmat;
@@ -22,16 +25,15 @@ public class Detection : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
+    private bool firstDetection = true;
     [Range(0,20)] public float awareness;
     private Material undetected;
-    private PlayerInputs PlayerInput;
     private Material[] matlist;
 
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         undetected = Detector.materials[MatNum];
-        PlayerInput = playerRef.GetComponent<PlayerInputs>();
         StartCoroutine(FOVRoutine());
         StartCoroutine(Awareness());
     }
@@ -42,6 +44,11 @@ public class Detection : MonoBehaviour
         {
             matlist[MatNum] = detected;
             Detector.materials = matlist;
+            if (firstDetection)
+            {
+                Score.num_detected++;
+                firstDetection = false;
+            }
         }
         else
         {
@@ -58,14 +65,6 @@ public class Detection : MonoBehaviour
         {
             yield return wait;
             FieldOfViewCheck();
-            if (PlayerInput.crouch)
-            {
-                DrawFOV();
-            }
-            else
-            {
-                // clear fov
-            }
         }
     }
 
@@ -76,13 +75,25 @@ public class Detection : MonoBehaviour
         while (true)
         {
             yield return wait;
+            if(awareness <= 0)
+            {
+                awarenessgauge.enabled = false;
+            }
+            else
+            {
+                awarenessgauge.enabled = true;
+            }
             if (canSeePlayer && awareness < 20)
             {
                 awareness++;
+                awarenessgauge.material.SetColor("_Color",
+                                    Color.Lerp(awarenessgauge.material.color, end, (awareness / 20)));
             }
             else if (awareness > 0)
             {
                 awareness--;
+                awarenessgauge.material.SetColor("_Color",
+                    Color.Lerp(awarenessgauge.material.color, start, (awareness / 20)));
             }
         }
     }
@@ -120,10 +131,5 @@ public class Detection : MonoBehaviour
         {
             canSeePlayer = false;
         }
-
-    }
-    private void DrawFOV()
-    {
-
     }
 }

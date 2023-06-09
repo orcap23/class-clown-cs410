@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
         }
         else
         {
-            score = num_detected < 5 ? 
+            score = num_detected < 2 ? 
                 (1000 * pranks.pranksdone) + (Timer.timerTime * (10 - num_detected)) :
                 (100 * pranks.pranksdone) + (Timer.timerTime * (10 - num_detected));
         }
