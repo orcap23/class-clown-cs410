@@ -11,10 +11,12 @@ public class AlarmMessage : MonoBehaviour
     private Image parentImage;
     private AudioSource mAudioSource;
     private bool started = false;
+    [SerializeField] private bool alert = true;
     // Start is called before the first frame update
 
     void Start()
     {
+        started = false;
         message = GetComponent<TMP_Text>();
         parentImage = parent.GetComponent<Image>();
         mAudioSource = GetComponent<AudioSource>();
@@ -24,7 +26,7 @@ public class AlarmMessage : MonoBehaviour
 
     private void Update()
     {
-        if(UnlockEscape.alarmFlash && !started)
+        if(UnlockEscape.alarmFlash && !started && alert)
         {
             started = true;
             StartCoroutine(blinkDisplay());
@@ -38,6 +40,19 @@ public class AlarmMessage : MonoBehaviour
             message.enabled = true;
             parentImage.enabled = true;
             mAudioSource.Play();
+            yield return new WaitForSeconds(.5f);
+            message.enabled = false;
+            parentImage.enabled = false;
+            yield return new WaitForSeconds(.25f);
+        }
+        Destroy(this);
+    }
+    public IEnumerator GetBlinkDisplay()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            message.enabled = true;
+            parentImage.enabled = true;
             yield return new WaitForSeconds(.5f);
             message.enabled = false;
             parentImage.enabled = false;

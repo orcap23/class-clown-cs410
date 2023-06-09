@@ -48,7 +48,21 @@ public class TurningMrSmith : MonoBehaviour
             {
                 if(rb.velocity.x != 0 || rb.velocity.y != 0 || rb.velocity.z != 0)
                 {
-                    
+                    smith.enabled = false;
+                    var teacher = smith.gameObject.transform;
+                    var rot = teacher.eulerAngles;
+                    rot.z = -90;
+                    teacher.eulerAngles = rot;
+
+                    for (int i = 0; i < list.PrankText.Length; i++)
+                    {
+                        if (list.PrankText[i].text == "Knock over Mr.Smith" && list.PrankText[i].color != Color.green)
+                        {
+                            list.PrankText[i].color = Color.green;
+                            list.pranksdone++;
+                        }
+                    }
+                    Destroy(this);
                 }
             }
         }

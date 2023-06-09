@@ -12,6 +12,10 @@ public class OpenPrankList : MonoBehaviour
     public static bool ToDoOpen = false;
     public GameObject ToDoUI;
     // Update is called once per frame
+    private void Start()
+    {
+        Pause();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
