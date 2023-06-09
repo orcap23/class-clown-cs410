@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class DefaultSound : MonoBehaviour
 {
-    private GameObject soundObj;
-    private AudioSource mAudioSource;
-    public string SoundName;
+    public AudioSource src;
+
     void Start()
     {
-        soundObj = GameObject.Find(SoundName);
+        src = GetComponent<AudioSource>();
     }
     
     private void OnCollisionEnter(Collision other)
     {
-        soundObj.TryGetComponent(out AudioSource src);
         src.Play();
     }
 }

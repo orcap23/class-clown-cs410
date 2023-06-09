@@ -9,7 +9,7 @@ public class Pie : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if (other.gameObject.name == "Teacher Smith" && !pied)
         {
             src[0].Play();
