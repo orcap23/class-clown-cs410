@@ -45,7 +45,6 @@ public class AlarmMessage : MonoBehaviour
             parentImage.enabled = false;
             yield return new WaitForSeconds(.25f);
         }
-        Destroy(this);
     }
     public IEnumerator GetBlinkDisplay()
     {
@@ -58,6 +57,5 @@ public class AlarmMessage : MonoBehaviour
             parentImage.enabled = false;
             yield return new WaitForSeconds(.25f);
         }
-        Destroy(this);
     }
 }
