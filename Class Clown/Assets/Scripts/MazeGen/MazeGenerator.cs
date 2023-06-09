@@ -37,7 +37,7 @@ namespace Unity.AI.Navigation
         void GenerateSchool()
         {
             List<Cell> visited = new List<Cell>();
-
+            Cell current = board[0,0];
             // Generate rooms using maze data structure
             for (int i = 0; i < size.x; i++)
             {
@@ -47,12 +47,18 @@ namespace Unity.AI.Navigation
                     {
                         continue;
                     }
-                    Cell current = board[i, j];
+                    Cell previous = current;
+                    current = board[i, j];
+                    
                     //Debug.Log(Hallway.Length);
                     int hallwayindex = Random.Range(0, Hallway.Length);
 
                     if (current.visited)
                     {
+                        if(previous.roomObject != null && previous.roomObject.name.Contains("Teacher"))
+                        {
+                            hallwayindex = 1;
+                        }
                         visited.Add(current);
                         GameObject hallway = Hallway[hallwayindex];
                         var newHallway = Instantiate(hallway, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehavior>();
@@ -106,8 +112,13 @@ namespace Unity.AI.Navigation
             {
                 if (room.roomObject.name.Contains("Snitch"))
                 {
-                    int snitchindex = Random.Range(0, snitches.Length);
+                    int snitchindex = 0;
                     Instantiate(snitches[snitchindex], room.roomObject.transform.position, Quaternion.identity, room.roomObject.transform);
+                }
+                if (room.roomObject.name.Contains("Teacher"))
+                {
+                    int snitchindex = 1;
+                    Instantiate(snitches[snitchindex], room.roomObject.transform.position, Quaternion.identity);
                 }
             }
         }

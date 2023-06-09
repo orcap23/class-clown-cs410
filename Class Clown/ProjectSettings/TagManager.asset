@@ -8,6 +8,8 @@ TagManager:
   - Selectable
   - Targetable
   - DontDestroy
+  - Teacher
+  - Teacher Hallway
   layers:
   - Default
   - TransparentFX

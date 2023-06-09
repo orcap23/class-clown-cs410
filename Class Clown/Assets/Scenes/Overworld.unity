@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26971948, g: 0.54827344, b: 0.85198486, a: 1}
+  m_IndirectSpecularColor: {r: 0.269751, g: 0.5482996, b: 0.85198385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5798,6 +5798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boy_casual_cap
       objectReference: {fileID: 0}
+    - target: {fileID: 1425448308371287707, guid: e97526614a81ece4dac5d71eb1595edb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4662035069288265181, guid: e97526614a81ece4dac5d71eb1595edb, type: 3}
       propertyPath: matchSurfaceRotation
       value: 1
@@ -7634,7 +7638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870404784093505856, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 2.8999999
       objectReference: {fileID: 0}
     - target: {fileID: 5870404784093505856, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7682,7 +7686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6438155186572838624, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 6438155186572838624, guid: bcacabaf67303d740ac576e65c6e9d90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39221,10 +39225,15 @@ MonoBehaviour:
   startpos: {x: 0, y: 0}
   snitches:
   - {fileID: 6181433895425795818, guid: 081deb182fb1fea4ebb0d7687d791b4d, type: 3}
+  - {fileID: 5821993465005582438, guid: a105cb6d4328e864fb34fe26a5f827b3, type: 3}
   Hallway:
   - {fileID: 7589191590439434016, guid: 8be0e72ef8cd1ae489da6ef844609930, type: 3}
   - {fileID: 1401507622883438328, guid: 83a476a84c2a12a44ab17a0aec88284b, type: 3}
   - {fileID: 4356843752496895247, guid: a1613979f9fc3dc4eb2684e08289c3cb, type: 3}
+  - {fileID: 985295092697339467, guid: 8f1c8136cde01be47ac06eed638d8466, type: 3}
+  - {fileID: 4356843752496895247, guid: a1613979f9fc3dc4eb2684e08289c3cb, type: 3}
+  - {fileID: 7589191590439434016, guid: 8be0e72ef8cd1ae489da6ef844609930, type: 3}
+  - {fileID: 7589191590439434016, guid: 8be0e72ef8cd1ae489da6ef844609930, type: 3}
   TriggerRoom: {fileID: 3794522916404415773, guid: fbcb6331a29a1ab4bb7a559cf81b77c9, type: 3}
   StartRoom: {fileID: 1047380914293191382, guid: 37d1c44ad4c4d76418478ee301f62935, type: 3}
   EndRoom: {fileID: 9006418656404578837, guid: 503a9ce845195684f89c025edb1e1730, type: 3}

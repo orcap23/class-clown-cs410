@@ -2842,6 +2842,7 @@ GameObject:
   - component: {fileID: 4225257734411189646}
   - component: {fileID: 7349291216481449764}
   - component: {fileID: 5969722692901642206}
+  - component: {fileID: 2019185107480034214}
   m_Layer: 0
   m_Name: snitch
   m_TagString: Untagged
@@ -2947,10 +2948,10 @@ MonoBehaviour:
     animationBool: isDead
   species: Human
   stats: {fileID: 11400000, guid: df9751c3f50884146ba79d1e58dd1354, type: 2}
-  wanderZone: 5
+  wanderZone: 4
   awareness: 100
   scent: 30
-  constainedToWanderZone: 1
+  constainedToWanderZone: 0
   nonAgressiveTowards: []
   matchSurfaceRotation: 0
   surfaceRotationSpeed: 2
@@ -2994,6 +2995,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2019185107480034214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181433895425795818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f826d6c4c3002e4fb8e7176dde54f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chasing: 0
+  recalculateTrys: 3
+  tryCounter: 0
+  detection: {fileID: 8545344973389226955}
+  snitchanimator: {fileID: 4225257734411189646}
+  snitch: {fileID: 5969722692901642206}
+  SelectedTeacher: {fileID: 0}
+  teachers: []
+  Player: {fileID: 5581192296093328622, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
 --- !u!1 &6371354315362574579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,3 +3967,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2248288916562017321, guid: d386e65315e483841861ec89a307078f, type: 3}
   m_PrefabInstance: {fileID: 2667547586920106385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8545344973389226955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6021912621850700378, guid: d386e65315e483841861ec89a307078f, type: 3}
+  m_PrefabInstance: {fileID: 2667547586920106385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee20aca14fb2f3244a2caf7ff9f156c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
