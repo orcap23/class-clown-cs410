@@ -8,7 +8,7 @@ public class Detection : MonoBehaviour
     // followed this guide 
     // https://github.com/Comp3interactive/FieldOfView
     // and edited to draw fov cone
-    public MeshRenderer Detector;
+    public Renderer Detector;
     public int MatNum;
     public Material detected;
     public Material fovmat;

@@ -945,6 +945,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3659155208403082835, guid: 4d96a576690672a4893371407dc7727f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03213e836b6d46eda1d4f0531452375, type: 2}
     - target: {fileID: 6446418735025087322, guid: 4d96a576690672a4893371407dc7727f, type: 3}
       propertyPath: m_Speed
       value: 2
@@ -1007,7 +1011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8739076192123576079, guid: 4d96a576690672a4893371407dc7727f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3823056
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8739076192123576079, guid: 4d96a576690672a4893371407dc7727f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1015,7 +1019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8739076192123576079, guid: 4d96a576690672a4893371407dc7727f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.88
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8739076192123576079, guid: 4d96a576690672a4893371407dc7727f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1047,11 +1051,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d96a576690672a4893371407dc7727f, type: 3}
+--- !u!137 &1148950118835724345 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3659155208403082835, guid: 4d96a576690672a4893371407dc7727f, type: 3}
+  m_PrefabInstance: {fileID: 4410724214495673962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4931834337061708133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8739076192123576079, guid: 4d96a576690672a4893371407dc7727f, type: 3}
   m_PrefabInstance: {fileID: 4410724214495673962}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7156263423674278916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6802174756276902510, guid: 4d96a576690672a4893371407dc7727f, type: 3}
+  m_PrefabInstance: {fileID: 4410724214495673962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7138160111554605138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156263423674278916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee20aca14fb2f3244a2caf7ff9f156c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Detector: {fileID: 1148950118835724345}
+  MatNum: 0
+  detected: {fileID: 2100000, guid: d80c4a411afc7704e8ee3bb67823eeaf, type: 2}
+  fovmat: {fileID: 2100000, guid: e9cfa78b8936c7d41b1ba4135c2c6972, type: 2}
+  radius: 8
+  angle: 120
+  playerRef: {fileID: 5581192296093328622, guid: 3be78f42b8370fd4b8136d01f8b7b298, type: 3}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 384
+  canSeePlayer: 0
+  awareness: 0
 --- !u!1001 &5135937905943274386
 PrefabInstance:
   m_ObjectHideFlags: 0
